@@ -31,7 +31,7 @@ function main() {
     zIndex: 11,
   });
 
-  const openIconName = "template-plugin-open";
+  const openIconName = "heatmap-plugin-open";
 
   logseq.provideStyle(css`
     div[data-injected-ui=${openIconName}-${pluginId}] {
@@ -53,7 +53,7 @@ function main() {
     path: "#search",
     template: `
       <a data-on-click="show"
-         style="opacity: .6; display: inline-flex;">⚙️</a>
+         style="opacity: .6; display: inline-flex;">📅</a>
     `,
   });
 }

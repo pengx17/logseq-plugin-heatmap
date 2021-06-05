@@ -1,22 +1,34 @@
 import React, { useRef } from "react";
+import { Heatmap } from "./Heatmap";
 import { useAppVisible } from "./utils";
 
 function App() {
   const innerRef = useRef<HTMLDivElement>(null);
   const visible = useAppVisible();
-  if (visible) {
+  const [started, setStarted] = React.useState(visible);
+  React.useEffect(() => {
+    if (visible) {
+      setStarted(true);
+    } else {
+      const timer = setTimeout(() => {
+        setStarted(false);
+      }, 1 * 1000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [visible]);
+  if (started) {
     return (
       <main
-        className="backdrop-filter backdrop-blur-md fixed inset-0 flex items-center justify-center"
+        className="absolute inset-0"
         onClick={(e) => {
           if (!innerRef.current?.contains(e.target as any)) {
             window.logseq.hideMainUI();
           }
         }}
       >
-        <div ref={innerRef} className="text-size-2em">
-          Welcome to [[Logseq]] Plugins!
-        </div>
+        <Heatmap ref={innerRef} />
       </main>
     );
   }
