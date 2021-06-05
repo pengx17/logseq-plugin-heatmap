@@ -53,7 +53,7 @@ function main() {
     path: "#search",
     template: `
       <a data-on-click="show"
-         style="opacity: .6; display: inline-flex;">📅</a>
+         style="opacity: .6; display: inline-flex;">🟩</a>
     `,
   });
 }
