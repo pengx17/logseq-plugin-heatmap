@@ -15,7 +15,7 @@ export const useAppVisible = () => {
     return () => {
       logseq.off(eventName, handler);
     };
-  }, []);
+  }, [isMounted]);
   return visible;
 };
 
@@ -28,6 +28,25 @@ export const useSidebarVisible = () => {
         setVisible(visible);
       }
     });
-  }, []);
+  }, [isMounted]);
   return visible;
+};
+
+export const useThemeMode = () => {
+  const isMounted = useMountedState();
+  const [mode, setMode] = React.useState<"dark" | "light">("light");
+  React.useEffect(() => {
+    (async () => {
+      const config = await logseq.App.getUserConfigs();
+      if (isMounted()) {
+        setMode(config.preferredThemeMode);
+      }
+      logseq.App.onThemeModeChanged((s) => {
+        if (isMounted()) {
+          setMode(s.mode);
+        }
+      });
+    })();
+  }, [isMounted]);
+  return mode === "dark" ? "dark" : "light";
 };

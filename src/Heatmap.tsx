@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import * as React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
-import "react-calendar-heatmap/dist/styles.css";
 import ReactTooltip from "react-tooltip";
 import "./Heatmap.css";
 
@@ -31,7 +30,7 @@ const useActivity = (startDate: string, endDate: string) => {
          [(>= ?d ${d0})] [(<= ?d ${d1})]]
      `);
 
-      const newValuesPromises = res.map(([page, count]: any[]) => {
+      const newValues = res.map(([page, count]: any[]) => {
         return {
           count: count ?? 0,
           date: dayjs("" + page["journal-day"], "YYYYMMDD").format(
@@ -41,26 +40,32 @@ const useActivity = (startDate: string, endDate: string) => {
         };
       });
 
-      const newValues = await Promise.all(newValuesPromises);
-      setValues(newValues.filter((v) => v.count !== 0));
+      setValues(newValues);
     })();
   }, [startDate, endDate]);
 
   return values;
 };
 
+type Datum = ReturnType<typeof useActivity>[number];
+
+// We have 1 ~ 4 scales for now:
+// [1,  10] -> 1
+// [11, 20] -> 2
+// [21, 30] -> 2
+// > 31     -> 4
 const scaleCount = (v: number) => {
   return Math.floor(Math.min(v, 30) / 10) + 1;
 };
 
-const getTooltipDataAttrs = (value: any) => {
+const getTooltipDataAttrs = (value: Datum) => {
   // Temporary hack around null value.date issue
   if (!value || !value.date) {
     return null;
   }
   // Configuration for react-tooltip
   return {
-    "data-tip": `[[${value.originalName}]] has ${value.count} journal blocks`,
+    "data-tip": `<strong>${value.count} journal blocks</strong> on <span class="opacity-70">${value.originalName}</span>`,
   };
 };
 
@@ -72,10 +77,13 @@ const useUpdateCounter = (v: any) => {
   return state;
 };
 
+const NUM_WEEKS = 16; // A quarter
+
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
-  const endDate = dayjs().format(defaultFormat);
+  const today = dayjs().format(defaultFormat);
+  const endDate = dayjs().endOf("week").format(defaultFormat);
   const startDate = dayjs(endDate)
-    .add(-12 * 7, "d")
+    .add(-NUM_WEEKS * 7, "d")
     .endOf("week")
     .format(defaultFormat);
   const values = useActivity(startDate, endDate);
@@ -83,31 +91,38 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   return (
     <div
       ref={ref}
-      className="w-60 p-4 bg-white rounded right-2 top-10 absolute"
+      style={{ width: `${NUM_WEEKS * 20}px` }}
+      className="heatmap-root"
     >
       <CalendarHeatmap
         startDate={startDate}
         endDate={endDate}
         values={values}
-        classForValue={(value) => {
+        classForValue={(value?: Datum) => {
+          let classes: string[] = [];
           if (!value) {
-            return "color-empty";
+            classes.push("color-empty");
+          } else {
+            classes.push(`color-github-${scaleCount(value.count)}`);
           }
-          return `color-github-${scaleCount(value.count)}`;
+          if (today === value?.date) {
+            classes.push("today");
+          }
+          return classes.join(" ");
         }}
         tooltipDataAttrs={getTooltipDataAttrs}
-        onClick={(d) => {
+        onClick={(d: Datum) => {
           if (d) {
             logseq.App.pushState("page", { name: d.originalName });
             logseq.hideMainUI();
           }
         }}
-        gutterSize={1.5}
+        gutterSize={4}
         transformDayElement={(rect) => {
-          return React.cloneElement(rect, { rx: 2 });
+          return React.cloneElement(rect, { rx: 3 });
         }}
       />
-      <ReactTooltip key={counter} />
+      <ReactTooltip key={counter} effect="solid" html />
     </div>
   );
 });
