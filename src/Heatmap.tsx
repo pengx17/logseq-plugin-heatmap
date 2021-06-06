@@ -1,48 +1,14 @@
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import * as React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
+import ReactTooltip from "react-tooltip";
+import "./Heatmap.css";
 
 dayjs.extend(customParseFormat);
 
-import ReactTooltip from "react-tooltip";
-
-import "./Heatmap.css";
-import { BlockEntity, BlockUUIDTuple } from "@logseq/libs/dist/LSPlugin";
-
 const defaultFormat = "YYYY-MM-DD";
-const dateFn = (offset = 0) => {
-  return dayjs().add(offset, "d").format(defaultFormat);
-};
-
-function isBlockEntity(
-  maybeBlockEntity: BlockEntity | BlockUUIDTuple
-): maybeBlockEntity is BlockEntity {
-  // PageEntity does not have "page" property
-  return "page" in maybeBlockEntity;
-}
-
-function countBlockEntity(blocks: BlockEntity[]): number {
-  if (blocks.length === 0) {
-    return 0;
-  }
-
-  return (
-    blocks.length +
-    blocks.reduce((accum, block) => {
-      if (block.children) {
-        return accum + countBlockEntity(block.children.filter(isBlockEntity));
-      }
-      return accum;
-    }, 0)
-  );
-}
-
-const getCountForDate = async (journalName: string) => {
-  const res = await logseq.Editor.getPageBlocksTree(journalName);
-  return countBlockEntity(res);
-};
 
 const useActivity = (startDate: string, endDate: string) => {
   const [values, setValues] = React.useState<
@@ -51,30 +17,28 @@ const useActivity = (startDate: string, endDate: string) => {
 
   React.useEffect(() => {
     (async () => {
-      // let newValuesPromises: Promise<{ date: string; count: number }>[] = [];
-
       const [d0, d1] = [
         dayjs(startDate).format("YYYYMMDD"),
         dayjs(endDate).format("YYYYMMDD"),
       ];
 
       const res: any[] = await logseq.DB.datascriptQuery(`
-      [:find (pull ?p [*])
-       :where
-       [?b :block/page ?p]
-       [?p :block/journal? true]
-       [?p :block/journal-day ?d]
-       [(>= ?d ${d0})] [(<= ?d ${d1})]]
-    `);
+        [:find (pull ?p [*]) (count ?b)
+         :where
+         [?b :block/page ?p]
+         [?p :block/journal? true]
+         [?p :block/journal-day ?d]
+         [(>= ?d ${d0})] [(<= ?d ${d1})]]
+     `);
 
-      const newValuesPromises = res.flat().map((page: any) => {
-        return getCountForDate(page["name"]).then((count) => ({
+      const newValuesPromises = res.map(([page, count]: any[]) => {
+        return {
           count: count ?? 0,
           date: dayjs("" + page["journal-day"], "YYYYMMDD").format(
             defaultFormat
           ),
           originalName: page["original-name"] as string,
-        }));
+        };
       });
 
       const newValues = await Promise.all(newValuesPromises);
@@ -86,7 +50,7 @@ const useActivity = (startDate: string, endDate: string) => {
 };
 
 const scaleCount = (v: number) => {
-  return Math.floor(Math.min(v, 50) / 10) + 1;
+  return Math.floor(Math.min(v, 30) / 10) + 1;
 };
 
 const getTooltipDataAttrs = (value: any) => {
@@ -100,6 +64,14 @@ const getTooltipDataAttrs = (value: any) => {
   };
 };
 
+const useUpdateCounter = (v: any) => {
+  const [state, setState] = React.useState(0);
+  React.useEffect(() => {
+    setState((c) => c + 1);
+  }, [v]);
+  return state;
+};
+
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const endDate = dayjs().format(defaultFormat);
   const startDate = dayjs(endDate)
@@ -107,9 +79,7 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
     .endOf("week")
     .format(defaultFormat);
   const values = useActivity(startDate, endDate);
-  React.useEffect(() => {
-    ReactTooltip.rebuild();
-  }, [values]);
+  const counter = useUpdateCounter(values);
   return (
     <div
       ref={ref}
@@ -128,8 +98,8 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
         tooltipDataAttrs={getTooltipDataAttrs}
         onClick={(d) => {
           if (d) {
-            logseq.App.pushState('page', { name: d.originalName })
-            logseq.hideMainUI()
+            logseq.App.pushState("page", { name: d.originalName });
+            logseq.hideMainUI();
           }
         }}
         gutterSize={1.5}
@@ -137,7 +107,7 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
           return React.cloneElement(rect, { rx: 2 });
         }}
       />
-      <ReactTooltip />
+      <ReactTooltip key={counter} />
     </div>
   );
 });

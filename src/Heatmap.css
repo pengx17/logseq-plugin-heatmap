@@ -3,3 +3,7 @@
   fill: #555;
   font-size: 8px;
 }
+
+svg.react-calendar-heatmap {
+  overflow: visible;
+}
