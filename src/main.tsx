@@ -34,6 +34,9 @@ function main() {
 
   const openIconName = "heatmap-plugin-open";
 
+  // @ts-expect-error
+  top['pluginId-loaded'] = true;
+
   logseq.provideStyle(css`
     div[data-injected-ui=${openIconName}-${pluginId}] {
       display: inline-flex;
@@ -42,6 +45,7 @@ function main() {
       font-weight: 500;
       padding: 0 5px;
       position: relative;
+      margin-top: .25rem;
     }
 
     div[data-injected-ui=${openIconName}-${pluginId}]:hover {
@@ -54,9 +58,14 @@ function main() {
     path: "#search",
     template: `
       <a data-on-click="show"
-         style="opacity: .6; display: inline-flex;">🟩</a>
+         style="opacity: .6; display: inline-flex; line-height: 1;">🟩</a>
     `,
   });
+}
+
+// @ts-expect-error
+if (top['pluginId-loaded']) {
+  top.location.reload();
 }
 
 logseq.ready(main).catch(console.error);

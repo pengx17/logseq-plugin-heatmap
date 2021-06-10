@@ -48,5 +48,6 @@ export const useThemeMode = () => {
       });
     })();
   }, [isMounted]);
+
   return mode === "dark" ? "dark" : "light";
 };
