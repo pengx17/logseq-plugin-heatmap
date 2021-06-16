@@ -27,7 +27,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: rm -rf node_modules
-      - run: yarn pack logseq-plugin-heatmap.zip
+      - run: yarn pack --filename logseq-plugin-heatmap.zip
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
