@@ -34,19 +34,15 @@ export const useSidebarVisible = () => {
 
 export const useThemeMode = () => {
   const isMounted = useMountedState();
-  const [mode, setMode] = React.useState<"dark" | "light">("light");
+  const [mode, setMode] = React.useState<"dark" | "light">(
+    matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light"
+  );
   React.useEffect(() => {
-    (async () => {
-      const config = await logseq.App.getUserConfigs();
+    logseq.App.onThemeModeChanged((s) => {
       if (isMounted()) {
-        setMode(config.preferredThemeMode);
+        setMode(s.mode);
       }
-      logseq.App.onThemeModeChanged((s) => {
-        if (isMounted()) {
-          setMode(s.mode);
-        }
-      });
-    })();
+    });
   }, [isMounted]);
 
   return mode === "dark" ? "dark" : "light";

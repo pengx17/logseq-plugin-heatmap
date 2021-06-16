@@ -9,6 +9,8 @@ import App from "./App";
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
 
+const magicKey = "__heatmap__plugin__loaded__";
+
 function main() {
   const pluginId = logseq.baseInfo.id;
   console.info(`#${pluginId}: MAIN`);
@@ -35,21 +37,30 @@ function main() {
   const openIconName = "heatmap-plugin-open";
 
   // @ts-expect-error
-  top['pluginId-loaded'] = true;
+  top[magicKey] = true;
 
   logseq.provideStyle(css`
     div[data-injected-ui=${openIconName}-${pluginId}] {
       display: inline-flex;
       align-items: center;
-      opacity: 0.55;
+      opacity: 0.8;
       font-weight: 500;
       padding: 0 5px;
       position: relative;
-      margin-top: .25rem;
+      margin-top: 0.25rem;
     }
 
     div[data-injected-ui=${openIconName}-${pluginId}]:hover {
-      opacity: 0.9;
+      opacity: 1;
+    }
+
+    div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
+      width: 1em;
+      height: 1em;
+      display: inline-flex;
+      background-color: #26a641;
+      border-radius: 4px;
+      border: 1px solid #eee;
     }
   `);
 
@@ -58,13 +69,15 @@ function main() {
     path: "#search",
     template: `
       <a data-on-click="show"
-         style="opacity: .6; display: inline-flex; line-height: 1;">🟩</a>
+         style="opacity: .6; display: inline-flex; line-height: 1;">
+         <div class="logseq-heatmap-trigger-icon"></div>
+      </a>
     `,
   });
 }
 
 // @ts-expect-error
-if (top['pluginId-loaded']) {
+if (top[magicKey]) {
   top.location.reload();
 }
 
