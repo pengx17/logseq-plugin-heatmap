@@ -35,7 +35,10 @@ export const useSidebarVisible = () => {
 export const useThemeMode = () => {
   const isMounted = useMountedState();
   const [mode, setMode] = React.useState<"dark" | "light">(
-    matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light"
+    top.document.querySelector("html")?.getAttribute("data-theme") ??
+      matchMedia("prefers-color-scheme: dark").matches
+      ? "dark"
+      : "light"
   );
   React.useEffect(() => {
     logseq.App.onThemeModeChanged((s) => {
