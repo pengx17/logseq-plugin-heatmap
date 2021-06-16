@@ -28,12 +28,7 @@ jobs:
       - run: yarn build
       - uses: papeloto/action-zip@v1
         with:
-          files: |
-            dist/
-            package.json
-            logo.png
-            readme.md
-            LICENSE
+          files: dist/ package.json logo.png readme.md LICENSE
           dest: release.zip
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
