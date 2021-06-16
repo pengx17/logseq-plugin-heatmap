@@ -27,7 +27,9 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: rm -rf node_modules
-      - run: yarn pack --filename logseq-plugin-heatmap.zip
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r logseq-plugin-heatmap.zip dist readme.md LICENSE logo.png package.json
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
