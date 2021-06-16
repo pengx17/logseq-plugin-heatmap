@@ -26,15 +26,19 @@ jobs:
           node-version: '14'
       - run: yarn install
       - run: yarn build
+      - uses: papeloto/action-zip@v1
+        with:
+          files: |
+            dist/
+            package.json
+            logo.png
+            readme.md
+            LICENSE
+          dest: release.zip
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files: |
-            dist
-            package.json
-            logo.png
-            readme.md
-            LICENSE
+          files: release.zip
