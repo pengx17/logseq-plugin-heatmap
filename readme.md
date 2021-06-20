@@ -13,3 +13,4 @@ Until Logseq has a plugin marketplace, you need to
 
 ## Demo
 ![](./heatmap-demo.gif)
+![](./daterange-selection.gif)

@@ -2,7 +2,8 @@
   @apply p-4 pt-2
   light:bg-white dark:bg-black
     rounded right-4 top-12 absolute
-    shadow-md;
+    shadow-md font-sans light:text-gray-500 dark:text-gray-300;
+  user-select: none;
 }
 
 svg.react-calendar-heatmap {
@@ -10,7 +11,6 @@ svg.react-calendar-heatmap {
 }
 
 .react-calendar-heatmap text {
-  font-family: Asap;
   fill: #555;
   font-size: 8px;
 }
@@ -76,4 +76,8 @@ svg.react-calendar-heatmap {
   .react-calendar-heatmap .color-github-4 {
     fill: #216e39;
   }
+}
+
+.date-range-tag {
+  @apply rounded border light:border-gray-200 dark:border-gray-700 px-1 mx-1 cursor-pointer bg-gray-300 bg-opacity-20;
 }
