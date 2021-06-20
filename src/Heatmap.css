@@ -1,7 +1,7 @@
 .heatmap-root {
   @apply p-4 pt-2
   light:bg-white dark:bg-black
-    rounded right-4 top-12 absolute
+    rounded absolute
     shadow-md font-sans light:text-gray-500 dark:text-gray-300;
   user-select: none;
 }
@@ -79,5 +79,5 @@ svg.react-calendar-heatmap {
 }
 
 .date-range-tag {
-  @apply rounded border light:border-gray-200 dark:border-gray-700 px-1 mx-1 cursor-pointer bg-gray-300 bg-opacity-20;
+  @apply rounded border light:border-gray-200 dark:border-gray-700 px-2 mx-1 cursor-pointer bg-gray-300 bg-opacity-20 opacity-60 hover:opacity-100;
 }

@@ -5,6 +5,7 @@ import "virtual:windi-devtools";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { openIconName } from "./utils";
 
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
@@ -33,8 +34,6 @@ function main() {
   logseq.setMainUIInlineStyle({
     zIndex: 11,
   });
-
-  const openIconName = "heatmap-plugin-open";
 
   // @ts-expect-error
   top[magicKey] = true;

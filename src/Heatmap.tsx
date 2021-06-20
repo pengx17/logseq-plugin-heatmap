@@ -7,6 +7,7 @@ import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
 import { useMountedState } from "react-use";
 import "./Heatmap.css";
+import { getIconPosition as getTriggerIconPosition } from "./utils";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
@@ -182,7 +183,7 @@ const DateRange = ({
   if (range) {
     const [startDate, endDate] = range;
     return (
-      <div className="text-xs">
+      <div className="text-xs mb-2">
         From
         <span className="date-range-tag" onClick={() => onRangeClick(true)}>
           {dayjs(startDate).format("MMM Do, YYYY")}
@@ -200,8 +201,10 @@ const DateRange = ({
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const today = dayjs().format(defaultFormat);
   const [range, setRange] = React.useState<[string, string] | null>(null);
+  const { x, bottom, right, y } = getTriggerIconPosition();
+  console.log(getTriggerIconPosition())
   return (
-    <div ref={ref} className="heatmap-root">
+    <div ref={ref} className="heatmap-root" style={{ left: right - 250, top: bottom + 20 }}>
       <DateRange range={range} onRangeChange={setRange} today={today} />
       {range && (
         <HeatmapChart today={today} endDate={range[1]} startDate={range[0]} />
