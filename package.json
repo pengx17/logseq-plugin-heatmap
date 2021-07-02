@@ -35,7 +35,7 @@
     "icon": "./logo.png"
   },
   "resolutions": {
-    "tslib": "2.2.0",
+    "tslib": "2.3.0",
     "source-map": "0.7.3",
     "debug": "4.3.2",
     "chalk": "4.1.1",
