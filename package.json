@@ -39,7 +39,7 @@
     "source-map": "0.7.3",
     "debug": "4.3.2",
     "chalk": "4.1.1",
-    "ansi-styles": "4.3.0",
+    "ansi-styles": "6.1.0",
     "supports-color": "7.2.0",
     "color-convert": "2.0.1",
     "color-name": "1.1.4",
