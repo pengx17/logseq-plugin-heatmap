@@ -43,6 +43,6 @@
     "supports-color": "7.2.0",
     "color-convert": "2.0.1",
     "color-name": "1.1.4",
-    "has-flag": "4.0.0"
+    "has-flag": "5.0.0"
   }
 }
