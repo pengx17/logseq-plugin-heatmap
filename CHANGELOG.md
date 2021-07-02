@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v1.0.0...v1.0.1) (2021-07-02)
+
+
+### Bug Fixes
+
+* code styles ([7da4871](https://github.com/pengx17/logseq-plugin-heatmap/commit/7da48710fd63353de3518f5e5c5bdf245ad45772))
+
 # 1.0.0 (2021-07-02)
 
 
