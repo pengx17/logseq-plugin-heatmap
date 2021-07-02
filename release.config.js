@@ -1,15 +1,9 @@
 module.exports = {
-  branches: ["main"],
+  branches: ["master"],
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    [
-      "@semantic-release/github",
-      {
-        assets: ["dist/**", "package.json", "logo.png", "LICENSE", "readme.md"],
-      },
-    ],
     [
       "@semantic-release/npm",
       {
@@ -17,5 +11,11 @@ module.exports = {
       },
     ],
     "@semantic-release/git",
+    [
+      "@semantic-release/github",
+      {
+        assets: ["dist/**", "package.json", "logo.png", "LICENSE", "readme.md"],
+      },
+    ],
   ],
 };
