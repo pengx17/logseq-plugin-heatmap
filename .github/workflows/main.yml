@@ -25,6 +25,9 @@ jobs:
           node-version: '14'
       - run: yarn install
       - run: yarn build
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r logseq-plugin-heatmap.zip dist readme.md LICENSE logo.png package.json
       - name: Release
         run: npx semantic-release
         env:

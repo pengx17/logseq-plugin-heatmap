@@ -14,7 +14,7 @@ module.exports = {
     [
       "@semantic-release/github",
       {
-        assets: ["dist/**", "package.json", "logo.png", "LICENSE", "readme.md"],
+        assets: "logseq-plugin-heatmap.zip",
       },
     ],
   ],
