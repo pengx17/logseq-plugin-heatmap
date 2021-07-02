@@ -74,6 +74,6 @@ export default defineConfig({
       host: "localhost",
     },
     port: 4567,
-    strictPort: true
+    strictPort: true,
   },
 });

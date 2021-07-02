@@ -171,7 +171,9 @@ const DateRange = ({
 
   const onRangeClick = (isPrev: boolean) => {
     const [, endDate] = range!;
-    const newEndDate = dayjs(endDate).add(isPrev ? -12 : 12, "weeks").format(defaultFormat);
+    const newEndDate = dayjs(endDate)
+      .add(isPrev ? -12 : 12, "weeks")
+      .format(defaultFormat);
     const newStartDate = dayjs(newEndDate)
       .add(-NUM_WEEKS, "week")
       .startOf("week")
@@ -203,7 +205,11 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const [range, setRange] = React.useState<[string, string] | null>(null);
   const { x, bottom, right, y } = getTriggerIconPosition();
   return (
-    <div ref={ref} className="heatmap-root" style={{ left: right - 250, top: bottom + 20 }}>
+    <div
+      ref={ref}
+      className="heatmap-root"
+      style={{ left: right - 250, top: bottom + 20 }}
+    >
       <DateRange range={range} onRangeChange={setRange} today={today} />
       {range && (
         <HeatmapChart today={today} endDate={range[1]} startDate={range[0]} />
