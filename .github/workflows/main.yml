@@ -26,14 +26,7 @@ jobs:
           node-version: '14'
       - run: yarn install
       - run: yarn build
-      - run: rm -rf node_modules
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r logseq-plugin-heatmap.zip dist readme.md LICENSE logo.png package.json
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: logseq-plugin-heatmap.zip
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

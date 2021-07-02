@@ -202,7 +202,6 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const today = dayjs().format(defaultFormat);
   const [range, setRange] = React.useState<[string, string] | null>(null);
   const { x, bottom, right, y } = getTriggerIconPosition();
-  console.log(getTriggerIconPosition())
   return (
     <div ref={ref} className="heatmap-root" style={{ left: right - 250, top: bottom + 20 }}>
       <DateRange range={range} onRangeChange={setRange} today={today} />

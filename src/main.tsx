@@ -46,7 +46,6 @@ function main() {
       font-weight: 500;
       padding: 0 5px;
       position: relative;
-      margin-top: 0.25rem;
     }
 
     div[data-injected-ui=${openIconName}-${pluginId}]:hover {
