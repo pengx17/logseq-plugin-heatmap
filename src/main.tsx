@@ -39,19 +39,6 @@ function main() {
   top[magicKey] = true;
 
   logseq.provideStyle(css`
-    div[data-injected-ui=${openIconName}-${pluginId}] {
-      display: inline-flex;
-      align-items: center;
-      opacity: 0.8;
-      font-weight: 500;
-      padding: 0 5px;
-      position: relative;
-    }
-
-    div[data-injected-ui=${openIconName}-${pluginId}]:hover {
-      opacity: 1;
-    }
-
     div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
       width: 1em;
       height: 1em;
@@ -62,15 +49,14 @@ function main() {
     }
   `);
 
-  logseq.provideUI({
+  logseq.App.registerUIItem("toolbar", {
     key: openIconName,
-    path: "#search",
     template: `
-      <a data-on-click="show"
-         style="opacity: .6; display: inline-flex; line-height: 1;">
-         <div class="logseq-heatmap-trigger-icon"></div>
-      </a>
-    `,
+    <a data-on-click="show"
+       style="opacity: .6; display: inline-flex; line-height: 1;">
+       <div class="logseq-heatmap-trigger-icon"></div>
+    </a>
+  `,
   });
 }
 
