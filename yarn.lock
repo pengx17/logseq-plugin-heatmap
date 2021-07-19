@@ -500,16 +500,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "17.0.13"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.13.tgz#6b7c9a8f2868586ad87d941c02337c6888fb874f"
-  integrity sha512-D/G3PiuqTfE3IMNjLn/DCp6umjVCSvtZTPdtAFy5+Ved6CsdRvivfKeCzw79W4AatShtU4nGqgvOv5Gro534vQ==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17.0.14":
+"@types/react@*", "@types/react@^17.0.14":
   version "17.0.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.14.tgz#f0629761ca02945c4e8fea99b8177f4c5c61fb0f"
   integrity sha512-0WwKHUbWuQWOce61UexYuWTGuGY/8JvtUe/dtQ6lR4sZ3UiylHotJeWpf3ArP9+DSGUoLY3wbU59VyMrJps5VQ==
@@ -3367,12 +3358,7 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-windicss@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.1.4.tgz#557eaf8e3c08064a309ccb5d887c82c4bce25069"
-  integrity sha512-3RBcANxdOy/n4dLVT8+0X409sGI+piO06ARbQ8RncxGuYgdw5Ip3hrhGIYajH67lV+tHc7xNVGxj73amOC9N0g==
-
-windicss@^3.1.5:
+windicss@^3.1.4, windicss@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.1.5.tgz#e9b6d6adcbc6f6c6e33e6625a3e5923b328f3137"
   integrity sha512-sGi2YiN6Bp/vWJS0jlpJhMmh7O2TBQ+yTbL6oqoRXz32q1VKELOUMfF+5pdtVL5uoVnfKf4gOUQs2XKNgU30Lw==
