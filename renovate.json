@@ -5,7 +5,8 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
-      "requiredStatusChecks": null
+      "requiredStatusChecks": null,
+      "rangeStrategy": "replace"
     }
   ]
 }
