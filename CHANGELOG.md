@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.3...v2.0.4) (2021-09-08)
+
+
+### Bug Fixes
+
+* build issue when using lib version 28 ([457c546](https://github.com/pengx17/logseq-plugin-heatmap/commit/457c546a4188254ad7997bad5434ef2a8fb36b58))
+
 ## [2.0.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.2...v2.0.3) (2021-09-08)
 
 
