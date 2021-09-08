@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@logseq/libs': 0.0.1-alpha.26
+  '@logseq/libs': 0.0.1-alpha.28
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/exec': 5.0.0
   '@semantic-release/git': 9.0.1
@@ -30,7 +30,7 @@ specifiers:
   windicss: 3.1.7
 
 dependencies:
-  '@logseq/libs': 0.0.1-alpha.26
+  '@logseq/libs': 0.0.1-alpha.28
   '@types/uuid': 8.3.1
   dayjs: 1.10.6
   react: 17.0.2
@@ -351,15 +351,14 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
-  /@logseq/libs/0.0.1-alpha.26:
-    resolution: {integrity: sha512-KmgK+SzMuNPnIoI3Prg5P8upYezIqGI6FqB55atCyNHXK3tbkVOw6Qev5hyj9gM2r2RaKLEXQhz0TBHBrrlBSg==}
+  /@logseq/libs/0.0.1-alpha.28:
+    resolution: {integrity: sha512-DKWevUisS6Bvv1WSkkJAC2VahCb/oVYYDmeiH4SlzEq1XtF2/0pufCnGJamqW/P3U+KQWx/xjx6wGmpA87D3LQ==}
     dependencies:
       csstype: 3.0.8
       debug: 4.3.2
       dompurify: 2.3.1
       eventemitter3: 4.0.7
       path: 0.12.7
-      postmate: 1.5.2
       snake-case: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -3063,10 +3062,6 @@ packages:
       nanoid: 3.1.25
       source-map-js: 0.6.2
     dev: true
-
-  /postmate/1.5.2:
-    resolution: {integrity: sha512-EHLlEmrUA/hALls49oBrtE7BzDXXjB9EiO4MZpsoO3R/jRuBmD+2WKQuYAbeuVEpTzrPpUTT79z2cz4qaFgPRg==}
-    dev: false
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}

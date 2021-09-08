@@ -75,4 +75,8 @@ export default defineConfig({
     port: 4567,
     strictPort: true,
   },
+  build: {
+    target: "esnext",
+    minify: "esbuild",
+  },
 });
