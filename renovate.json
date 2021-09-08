@@ -1,9 +1,14 @@
 {
-  "extends": ["config:base", ":preserveSemverRanges"],
+  "extends": ["config:base"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "requiredStatusChecks": null
+    },
+    {
+      "matchPackageNames": ["@logseq/libs"],
+      "ignoreUnstable": false,
       "automerge": true,
       "requiredStatusChecks": null
     }

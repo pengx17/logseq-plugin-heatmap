@@ -17,9 +17,16 @@ module.exports = {
     ],
     "@semantic-release/git",
     [
+      "@semantic-release/exec",
+      {
+        prepareCmd:
+          "zip -qq -r logseq-plugin-heatmap-${nextRelease.version}.zip dist readme.md LICENSE package.json",
+      },
+    ],
+    [
       "@semantic-release/github",
       {
-        assets: "logseq-plugin-heatmap.zip",
+        assets: "logseq-plugin-heatmap-*.zip",
       },
     ],
   ],

@@ -2,6 +2,9 @@
 
 name: Releases
 
+env:
+  PLUGIN_NAME: logseq-plugin-heatmap
+
 # Controls when the action will run.
 on:
   push:
@@ -28,9 +31,8 @@ jobs:
           version: 6.0.2
       - run: pnpm install
       - run: pnpm build
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r logseq-plugin-heatmap.zip dist readme.md LICENSE logo.png package.json
+      - name: Install zip
+        uses: montudor/action-zip@v1
       - name: Release
         run: npx semantic-release
         env:

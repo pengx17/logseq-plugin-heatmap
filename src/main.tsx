@@ -60,9 +60,11 @@ function main() {
   });
 }
 
-// @ts-expect-error
-if (top[magicKey]) {
-  top.location.reload();
+if (process.env.NODE_ENV === "development") {
+  // @ts-expect-error
+  if (top[magicKey]) {
+    top?.location.reload();
+  }
 }
 
 logseq.ready(main).catch(console.error);

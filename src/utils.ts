@@ -5,7 +5,7 @@ export const openIconName = "heatmap-plugin-open";
 
 export function getIconPosition() {
   const pluginId = logseq.baseInfo.id;
-  const el = top.document.querySelector(
+  const el = top?.document.querySelector(
     `div[data-injected-ui=${openIconName}-${pluginId}]`
   );
   return el!.getBoundingClientRect();
@@ -47,12 +47,13 @@ export const useThemeMode = () => {
   const [mode, setMode] = React.useState<"dark" | "light">("light");
   React.useEffect(() => {
     setMode(
-      (top.document
+      (top?.document
         .querySelector("html")
         ?.getAttribute("data-theme") as typeof mode) ??
         (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
     );
     logseq.App.onThemeModeChanged((s) => {
+      console.log(s);
       if (isMounted()) {
         setMode(s.mode);
       }
