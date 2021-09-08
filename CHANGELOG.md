@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.2...v2.0.3) (2021-09-08)
+
+
+### Bug Fixes
+
+* revert logseq libs back to 26 ([b6fbbd0](https://github.com/pengx17/logseq-plugin-heatmap/commit/b6fbbd00f812481f1a0d7441914f02f8417be34e))
+
 ## [2.0.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.1...v2.0.2) (2021-09-08)
 
 
