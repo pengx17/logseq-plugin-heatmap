@@ -9,7 +9,7 @@
     {
       "matchPackageNames": ["@logseq/libs"],
       "ignoreUnstable": false,
-      "automerge": true,
+      "automerge": false,
       "requiredStatusChecks": null
     }
   ]

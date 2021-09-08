@@ -1,7 +1,6 @@
 import { defineConfig, Plugin, ResolvedConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
 import WindiCSS from "vite-plugin-windicss";
-// @ts-expect-error
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 
