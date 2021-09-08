@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.0...v2.0.1) (2021-09-08)
+
+
+### Bug Fixes
+
+* make top optional ([ed92ef5](https://github.com/pengx17/logseq-plugin-heatmap/commit/ed92ef5e1f23eda0193742789e0718fd98035f6b))
+
 # [2.0.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v1.0.1...v2.0.0) (2021-07-19)
 
 ## [1.0.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v1.0.0...v1.0.1) (2021-07-02)
