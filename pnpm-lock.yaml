@@ -14,7 +14,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 4.31.0
   '@typescript-eslint/parser': 4.31.0
   '@vitejs/plugin-react-refresh': 1.3.6
-  conventional-changelog-conventionalcommits: 4.6.0
+  conventional-changelog-conventionalcommits: 4.6.1
   dayjs: ^1.10.6
   eslint: 7.32.0
   eslint-plugin-react: 7.25.1
@@ -51,7 +51,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 4.31.0_a690ff3776b01e92cf0b93501bb5ae6a
   '@typescript-eslint/parser': 4.31.0_eslint@7.32.0+typescript@4.4.2
   '@vitejs/plugin-react-refresh': 1.3.6
-  conventional-changelog-conventionalcommits: 4.6.0
+  conventional-changelog-conventionalcommits: 4.6.1
   eslint: 7.32.0
   eslint-plugin-react: 7.25.1_eslint@7.32.0
   semantic-release: 17.4.7
@@ -1204,8 +1204,8 @@ packages:
       q: 1.5.1
     dev: true
 
-  /conventional-changelog-conventionalcommits/4.6.0:
-    resolution: {integrity: sha512-sj9tj3z5cnHaSJCYObA9nISf7eq/YjscLPoq6nmew4SiOjxqL2KRpK20fjnjVbpNDjJ2HR3MoVcWKXwbVvzS0A==}
+  /conventional-changelog-conventionalcommits/4.6.1:
+    resolution: {integrity: sha512-lzWJpPZhbM1R0PIzkwzGBCnAkH5RKJzJfFQZcl/D+2lsJxAwGnDKBqn/F4C1RD31GJNn8NuKWQzAZDAVXPp2Mw==}
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
