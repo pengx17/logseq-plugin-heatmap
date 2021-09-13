@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.4...v2.0.5) (2021-09-13)
+
+
+### Bug Fixes
+
+* bundle logo file ([94a7b83](https://github.com/pengx17/logseq-plugin-heatmap/commit/94a7b833f99dcc1fbf508420774247974065a855))
+
 ## [2.0.4](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.3...v2.0.4) (2021-09-08)
 
 
