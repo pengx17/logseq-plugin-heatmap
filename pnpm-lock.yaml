@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@logseq/libs': 0.0.1-alpha.28
+  '@logseq/libs': 0.0.1-alpha.29
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/exec': 5.0.0
   '@semantic-release/git': 9.0.1
@@ -30,7 +30,7 @@ specifiers:
   windicss: 3.1.7
 
 dependencies:
-  '@logseq/libs': 0.0.1-alpha.28
+  '@logseq/libs': 0.0.1-alpha.29
   '@types/uuid': 8.3.1
   dayjs: 1.10.6
   react: 17.0.2
@@ -351,8 +351,8 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
-  /@logseq/libs/0.0.1-alpha.28:
-    resolution: {integrity: sha512-DKWevUisS6Bvv1WSkkJAC2VahCb/oVYYDmeiH4SlzEq1XtF2/0pufCnGJamqW/P3U+KQWx/xjx6wGmpA87D3LQ==}
+  /@logseq/libs/0.0.1-alpha.29:
+    resolution: {integrity: sha512-OgFyaPh6OCJiSuuY+BtWxXxLi9hdkU54qCw0zLCroJXcOhzie4Ib9cNMRPguplZ5mjRr3K5hYkyqZNOjyPguBg==}
     dependencies:
       csstype: 3.0.8
       debug: 4.3.2
@@ -1837,6 +1837,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
