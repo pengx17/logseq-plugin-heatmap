@@ -42,6 +42,7 @@ function main() {
     div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
       width: 1em;
       height: 1em;
+      margin: 0 0.4em;
       display: inline-flex;
       background-color: #26a641;
       border-radius: 4px;
@@ -52,9 +53,8 @@ function main() {
   logseq.App.registerUIItem("toolbar", {
     key: openIconName,
     template: `
-    <a data-on-click="show"
-       style="opacity: .6; display: inline-flex; line-height: 1;">
-       <div class="logseq-heatmap-trigger-icon"></div>
+    <a data-on-click="show">
+      <div class="logseq-heatmap-trigger-icon"></div>
     </a>
   `,
   });
