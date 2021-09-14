@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.5...v2.0.6) (2021-09-14)
+
+
+### Bug Fixes
+
+* heatmap icon margin on 0.3.9 ([a7436de](https://github.com/pengx17/logseq-plugin-heatmap/commit/a7436de65f650c39d665d97208fa9638a8b3ff5e))
+
 ## [2.0.5](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.4...v2.0.5) (2021-09-13)
 
 
