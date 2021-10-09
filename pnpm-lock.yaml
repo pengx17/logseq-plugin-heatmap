@@ -17,7 +17,7 @@ specifiers:
   conventional-changelog-conventionalcommits: 4.6.1
   dayjs: ^1.10.6
   eslint: 7.32.0
-  eslint-plugin-react: 7.25.1
+  eslint-plugin-react: 7.26.1
   react: ^17.0.2
   react-calendar-heatmap: ^1.8.1
   react-dom: ^17.0.2
@@ -53,7 +53,7 @@ devDependencies:
   '@vitejs/plugin-react-refresh': 1.3.6
   conventional-changelog-conventionalcommits: 4.6.1
   eslint: 7.32.0
-  eslint-plugin-react: 7.25.1_eslint@7.32.0
+  eslint-plugin-react: 7.26.1_eslint@7.32.0
   semantic-release: 17.4.7
   typescript: 4.4.3
   vite: 2.5.7
@@ -1448,6 +1448,32 @@ packages:
       unbox-primitive: 1.0.1
     dev: true
 
+  /es-abstract/1.19.1:
+    resolution: {integrity: sha512-2vJ6tjA/UfqLm2MPs7jxVybLoB8i1t1Jd9R3kISld20sIxPcTbLuggQOUxeWeAvIUkduv/CfMjuh4WmiXr2v9w==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      es-to-primitive: 1.2.1
+      function-bind: 1.1.1
+      get-intrinsic: 1.1.1
+      get-symbol-description: 1.0.0
+      has: 1.0.3
+      has-symbols: 1.0.2
+      internal-slot: 1.0.3
+      is-callable: 1.2.4
+      is-negative-zero: 2.0.1
+      is-regex: 1.1.4
+      is-shared-array-buffer: 1.0.1
+      is-string: 1.0.7
+      is-weakref: 1.0.1
+      object-inspect: 1.11.0
+      object-keys: 1.1.1
+      object.assign: 4.1.2
+      string.prototype.trimend: 1.0.4
+      string.prototype.trimstart: 1.0.4
+      unbox-primitive: 1.0.1
+    dev: true
+
   /es-to-primitive/1.2.1:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
     engines: {node: '>= 0.4'}
@@ -1478,8 +1504,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-react/7.25.1_eslint@7.32.0:
-    resolution: {integrity: sha512-P4j9K1dHoFXxDNP05AtixcJEvIT6ht8FhYKsrkY0MPCPaUMYijhpWwNiRDZVtA8KFuZOkGSeft6QwH8KuVpJug==}
+  /eslint-plugin-react/7.26.1_eslint@7.32.0:
+    resolution: {integrity: sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7
@@ -1489,14 +1515,15 @@ packages:
       doctrine: 2.1.0
       eslint: 7.32.0
       estraverse: 5.2.0
-      has: 1.0.3
       jsx-ast-utils: 3.2.0
       minimatch: 3.0.4
       object.entries: 1.1.4
       object.fromentries: 2.0.4
+      object.hasown: 1.1.0
       object.values: 1.1.4
       prop-types: 15.7.2
       resolve: 2.0.0-next.3
+      semver: 6.3.0
       string.prototype.matchall: 4.0.5
     dev: true
 
@@ -2187,6 +2214,10 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
+  /is-shared-array-buffer/1.0.1:
+    resolution: {integrity: sha512-IU0NmyknYZN0rChcKhRO1X8LYz5Isj/Fsqh8NJOSf+N/hCOTwy29F32Ik7a+QszE63IdvmwdTPDd6cZ5pg4cwA==}
+    dev: true
+
   /is-stream/2.0.1:
     resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
     engines: {node: '>=8'}
@@ -2211,6 +2242,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       text-extensions: 1.9.0
+    dev: true
+
+  /is-weakref/1.0.1:
+    resolution: {integrity: sha512-b2jKc2pQZjaeFYWEf7ScFj+Be1I+PXmlu572Q8coTXZ+LD/QQZ7ShPMst8h16riVgyXTQwUsFEl74mDvc/3MHQ==}
+    dependencies:
+      call-bind: 1.0.2
     dev: true
 
   /isarray/1.0.0:
@@ -2736,7 +2773,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.3
-      es-abstract: 1.18.6
+      es-abstract: 1.19.1
     dev: true
 
   /object.fromentries/2.0.4:
@@ -2745,8 +2782,15 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.3
-      es-abstract: 1.18.6
+      es-abstract: 1.19.1
       has: 1.0.3
+    dev: true
+
+  /object.hasown/1.1.0:
+    resolution: {integrity: sha512-MhjYRfj3GBlhSkDHo6QmvgjRLXQ2zndabdf3nX0yTyZK9rPfxb6uRpAac8HXNLy1GpqWtZ81Qh4v3uOls2sRAg==}
+    dependencies:
+      define-properties: 1.1.3
+      es-abstract: 1.19.1
     dev: true
 
   /object.values/1.1.4:
@@ -3512,7 +3556,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.3
-      es-abstract: 1.18.6
+      es-abstract: 1.19.1
       get-intrinsic: 1.1.1
       has-symbols: 1.0.2
       internal-slot: 1.0.3
