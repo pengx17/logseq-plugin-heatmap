@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.6...v2.0.7) (2021-10-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @logseq/libs to v0.0.1-alpha.29 ([3cb2b6b](https://github.com/pengx17/logseq-plugin-heatmap/commit/3cb2b6b6adf67549566226c8391fc8636ce05764))
+
 ## [2.0.6](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.5...v2.0.6) (2021-09-14)
 
 
