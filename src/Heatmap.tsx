@@ -115,6 +115,7 @@ const HeatmapChart = ({
   const activities = useActivities(startDate, endDate);
   const counter = useUpdateCounter(activities);
   const weeks = Math.ceil(activities.length / 7);
+  const totalBlocks = activities.reduce((acc, cur) => acc + cur.count, 0);
   return (
     <div style={{ width: `${weeks * 16}px` }}>
       <CalendarHeatmap
@@ -142,6 +143,12 @@ const HeatmapChart = ({
           return React.cloneElement(rect, { rx: 3 });
         }}
       />
+      <div className="text-xs text-right mt-1">
+        Total journal blocks during this period:{" "}
+        <span className="font-medium">
+          {new Intl.NumberFormat().format(totalBlocks)}
+        </span>
+      </div>
       <ReactTooltip key={counter} effect="solid" html />
     </div>
   );
@@ -203,12 +210,12 @@ const DateRange = ({
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const today = dayjs().format(defaultFormat);
   const [range, setRange] = React.useState<[string, string] | null>(null);
-  const { x, bottom, right, y } = getTriggerIconPosition();
+  const { bottom, right } = getTriggerIconPosition();
   return (
     <div
       ref={ref}
       className="heatmap-root"
-      style={{ left: right - 250, top: bottom + 20 }}
+      style={{ left: right - 300, top: bottom + 20 }}
     >
       <DateRange range={range} onRangeChange={setRange} today={today} />
       {range && (

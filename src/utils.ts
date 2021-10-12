@@ -8,7 +8,7 @@ export function getIconPosition() {
   const el = top?.document.querySelector(
     `div[data-injected-ui=${openIconName}-${pluginId}]`
   );
-  return el!.getBoundingClientRect();
+  return el?.getBoundingClientRect() ?? { bottom: 10, right: 10 };
 }
 
 export const useAppVisible = () => {

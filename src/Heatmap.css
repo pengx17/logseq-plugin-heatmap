@@ -1,5 +1,5 @@
 .heatmap-root {
-  @apply p-4 pt-2
+  @apply px-4 py-2
   light:bg-white dark:bg-black
     rounded absolute
     shadow-md font-sans light:text-gray-500 dark:text-gray-300;

@@ -33,6 +33,7 @@ function main() {
   logseq.provideModel(createModel());
   logseq.setMainUIInlineStyle({
     zIndex: 11,
+    maxWidth: "calc(100% - 10px)",
   });
 
   // @ts-expect-error
