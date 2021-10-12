@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.7...v2.1.0) (2021-10-12)
+
+
+### Features
+
+* add a basic journal blocks metric ([82176a6](https://github.com/pengx17/logseq-plugin-heatmap/commit/82176a6065b75c4d63267a736d1663b690fd4416))
+
 ## [2.0.7](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.0.6...v2.0.7) (2021-10-09)
 
 
