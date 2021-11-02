@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@logseq/libs': 0.0.1-alpha.29
+  '@logseq/libs': 0.0.1-alpha.30
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/exec': 5.0.0
   '@semantic-release/git': 9.0.1
@@ -30,7 +30,7 @@ specifiers:
   windicss: 3.2.1
 
 dependencies:
-  '@logseq/libs': 0.0.1-alpha.29
+  '@logseq/libs': 0.0.1-alpha.30
   '@types/uuid': 8.3.1
   dayjs: 1.10.6
   react: 17.0.2
@@ -351,8 +351,8 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
-  /@logseq/libs/0.0.1-alpha.29:
-    resolution: {integrity: sha512-OgFyaPh6OCJiSuuY+BtWxXxLi9hdkU54qCw0zLCroJXcOhzie4Ib9cNMRPguplZ5mjRr3K5hYkyqZNOjyPguBg==}
+  /@logseq/libs/0.0.1-alpha.30:
+    resolution: {integrity: sha512-SljqkobgPp4EUt0fwVPNgFJE79nX+jHvSdyBuaSwBZ+PZZjvRHA/Bd3Ev4i7gBwWT8ZaupwLmT5sxs0b+hcvxQ==}
     dependencies:
       csstype: 3.0.8
       debug: 4.3.2
