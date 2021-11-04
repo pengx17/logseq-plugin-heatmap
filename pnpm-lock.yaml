@@ -26,7 +26,7 @@ specifiers:
   semantic-release: 17.4.7
   typescript: 4.4.4
   vite: 2.6.13
-  vite-plugin-windicss: 1.4.12
+  vite-plugin-windicss: 1.5.1
   windicss: 3.2.1
 
 dependencies:
@@ -57,7 +57,7 @@ devDependencies:
   semantic-release: 17.4.7
   typescript: 4.4.4
   vite: 2.6.13
-  vite-plugin-windicss: 1.4.12_vite@2.6.13
+  vite-plugin-windicss: 1.5.1_vite@2.6.13
   windicss: 3.2.1
 
 packages:
@@ -821,8 +821,8 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/config/1.4.12:
-    resolution: {integrity: sha512-+ckfkRoWC8wia5o7iCyDmydiJEkjX6lVEb6a2QVPI9WQ9Mi7hqfgOoStijOsEn0wIz95FDiOfVe5aSb1V4jEtw==}
+  /@windicss/config/1.5.1:
+    resolution: {integrity: sha512-nWNgvvJj9RcYhLcqwju/Z8FfaHRjyWHDYS3IgY7lWUM+vWTLFuKqhavKfC1589kdYjiO9JeX07Vg+YzfcxP0Yw==}
     dependencies:
       debug: 4.3.2
       jiti: 1.12.9
@@ -831,11 +831,11 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.4.12:
-    resolution: {integrity: sha512-ixYflwELxEjHyh0B9HqTwDp1d3v5IWtUucVY84o41ZU53BkuRw1lKbNlLMqbrtbk8p8rAQxjuwWZkWxFYi77tQ==}
+  /@windicss/plugin-utils/1.5.1:
+    resolution: {integrity: sha512-gxJiTCMKv1p1x4W2BLG2yfNe+DfIVPc8+aKvfCUCtOpdg5GB5yzhuAC4ROsKiXHxu4QXoojrh7jXH6ELlrELpQ==}
     dependencies:
       '@antfu/utils': 0.3.0
-      '@windicss/config': 1.4.12
+      '@windicss/config': 1.5.1
       debug: 4.3.2
       fast-glob: 3.2.7
       magic-string: 0.25.7
@@ -4015,12 +4015,12 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-windicss/1.4.12_vite@2.6.13:
-    resolution: {integrity: sha512-5YLT7e72z1vCTSmprU/KxtRg22ySN+H19Qxy67lbG3mEbq8YbheOlmVhbqNqSv2MjFVhFqu72Q1FkkjyWENyQQ==}
+  /vite-plugin-windicss/1.5.1_vite@2.6.13:
+    resolution: {integrity: sha512-AUuRFT5Y7SfW9eclaKf5BOTZ7MMfkUZzOeVzqd9yq/uIwzWyleRtssCTuJgZ0+om+hnXn9YwcIpR26lsaasIbg==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.4.12
+      '@windicss/plugin-utils': 1.5.1
       chalk: 4.1.2
       debug: 4.3.2
       vite: 2.6.13
