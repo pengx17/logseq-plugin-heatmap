@@ -43,8 +43,7 @@ function main() {
     div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
       width: 1em;
       height: 1em;
-      margin: 0 0.4em;
-      display: inline-flex;
+      margin: 1px 0.4em 0 0.4em;
       background-color: #26a641;
       border-radius: 4px;
       border: 1px solid #eee;
@@ -64,7 +63,7 @@ function main() {
 if (process.env.NODE_ENV === "development") {
   // @ts-expect-error
   if (top[magicKey]) {
-    top?.location.reload();
+    logseq.App.relaunch();
   }
 }
 
