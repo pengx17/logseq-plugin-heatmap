@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@logseq/libs': 0.0.1-alpha.29
+  '@logseq/libs': 0.0.1-alpha.30
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/exec': 5.0.0
   '@semantic-release/git': 9.0.1
@@ -15,7 +15,7 @@ specifiers:
   '@typescript-eslint/parser': 4.33.0
   '@vitejs/plugin-react-refresh': 1.3.6
   conventional-changelog-conventionalcommits: 4.6.1
-  dayjs: ^1.10.6
+  dayjs: ^1.10.7
   eslint: 7.32.0
   eslint-plugin-react: 7.26.1
   react: ^17.0.2
@@ -30,9 +30,9 @@ specifiers:
   windicss: 3.2.1
 
 dependencies:
-  '@logseq/libs': 0.0.1-alpha.29
+  '@logseq/libs': 0.0.1-alpha.30
   '@types/uuid': 8.3.1
-  dayjs: 1.10.6
+  dayjs: 1.10.7
   react: 17.0.2
   react-calendar-heatmap: 1.8.1_react@17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -351,12 +351,12 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
-  /@logseq/libs/0.0.1-alpha.29:
-    resolution: {integrity: sha512-OgFyaPh6OCJiSuuY+BtWxXxLi9hdkU54qCw0zLCroJXcOhzie4Ib9cNMRPguplZ5mjRr3K5hYkyqZNOjyPguBg==}
+  /@logseq/libs/0.0.1-alpha.30:
+    resolution: {integrity: sha512-SljqkobgPp4EUt0fwVPNgFJE79nX+jHvSdyBuaSwBZ+PZZjvRHA/Bd3Ev4i7gBwWT8ZaupwLmT5sxs0b+hcvxQ==}
     dependencies:
-      csstype: 3.0.8
+      csstype: 3.0.9
       debug: 4.3.2
-      dompurify: 2.3.1
+      dompurify: 2.3.3
       eventemitter3: 4.0.7
       path: 0.12.7
       snake-case: 3.0.4
@@ -1265,12 +1265,16 @@ packages:
   /csstype/3.0.8:
     resolution: {integrity: sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==}
 
+  /csstype/3.0.9:
+    resolution: {integrity: sha512-rpw6JPxK6Rfg1zLOYCSwle2GFOOsnjmDYDaBwEcwoOg4qlsIVCN789VkBZDJAGi4T07gI4YSutR43t9Zz4Lzuw==}
+    dev: false
+
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
 
-  /dayjs/1.10.6:
-    resolution: {integrity: sha512-AztC/IOW4L1Q41A86phW5Thhcrco3xuAA+YX/BLpLWWjRcTj5TOt/QImBLmCKlrF7u7k47arTnOyL6GnbG8Hvw==}
+  /dayjs/1.10.7:
+    resolution: {integrity: sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==}
     dev: false
 
   /debug/4.3.2:
@@ -1352,8 +1356,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dompurify/2.3.1:
-    resolution: {integrity: sha512-xGWt+NHAQS+4tpgbOAI08yxW0Pr256Gu/FNE2frZVTbgrBUn8M7tz7/ktS/LZ2MHeGqz6topj0/xY+y8R5FBFw==}
+  /dompurify/2.3.3:
+    resolution: {integrity: sha512-dqnqRkPMAjOZE0FogZ+ceJNM2dZ3V/yNOuFB7+39qpO93hHhfRpHw3heYQC7DPK9FqbQTfBKUJhiSfz4MvXYwg==}
     dev: false
 
   /dot-case/3.0.4:
@@ -2080,7 +2084,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.14.2
+      uglify-js: 3.14.3
     dev: true
 
   /hard-rejection/2.1.0:
@@ -3946,8 +3950,8 @@ packages:
     hasBin: true
     dev: true
 
-  /uglify-js/3.14.2:
-    resolution: {integrity: sha512-rtPMlmcO4agTUfz10CbgJ1k6UAoXM2gWb3GoMPPZB/+/Ackf8lNWk11K4rYi2D0apgoFRLtQOZhb+/iGNJq26A==}
+  /uglify-js/3.14.3:
+    resolution: {integrity: sha512-mic3aOdiq01DuSVx0TseaEzMIVqebMZ0Z3vaeDhFEh9bsc24hV1TFvN74reA2vs08D0ZWfNjAcJ3UbVLaBss+g==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true

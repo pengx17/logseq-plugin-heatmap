@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { Heatmap } from "./Heatmap";
 import { useAppVisible, useThemeMode } from "./utils";
 
+console.log(await logseq.App.getUserInfo())
+
 function App() {
   const innerRef = useRef<HTMLDivElement>(null);
   const visible = useAppVisible();
