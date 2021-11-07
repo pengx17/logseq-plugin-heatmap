@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React, { useState } from "react";
 import { useMountedState } from "react-use";
 
@@ -50,7 +51,7 @@ export const useThemeMode = () => {
       (top?.document
         .querySelector("html")
         ?.getAttribute("data-theme") as typeof mode) ??
-        (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
+      (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
     );
     logseq.App.onThemeModeChanged((s) => {
       console.log(s);
@@ -61,4 +62,34 @@ export const useThemeMode = () => {
   }, [isMounted]);
 
   return mode;
+};
+
+
+export let displayDateFormat = "MMM do, yyyy";
+
+export async function getDisplayDateFormat() {
+  let format =
+    (await logseq.App.getUserConfigs())?.preferredDateFormat ?? "MMM do, yyyy";
+
+  displayDateFormat = format;
+  return format;
+}
+
+export const toDate = (d: Date | string) => {
+  if (typeof d !== "string") {
+    return d;
+  }
+  return new Date(d);
+};
+
+export const formatAsDashed = (d: Date | string) => {
+  return format(toDate(d), "yyyy-MM-dd");
+};
+
+export const formatAsParam = (d: Date | string) => {
+  return format(toDate(d), "yyyyMMdd");
+};
+
+export const formatAsLocale = (d: Date | string) => {
+  return format(toDate(d), displayDateFormat);
 };

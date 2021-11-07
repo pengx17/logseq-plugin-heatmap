@@ -1,18 +1,22 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import advancedFormat from "dayjs/plugin/advancedFormat";
-
+import {
+  addDays,
+  addWeeks,
+  differenceInDays,
+  endOfWeek,
+  parse,
+  startOfWeek,
+} from "date-fns";
 import * as React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
 import { useMountedState } from "react-use";
 import "./Heatmap.css";
-import { getIconPosition as getTriggerIconPosition } from "./utils";
-
-dayjs.extend(customParseFormat);
-dayjs.extend(advancedFormat);
-
-const defaultFormat = "YYYY-MM-DD";
+import {
+  formatAsDashed,
+  formatAsLocale,
+  formatAsParam,
+  getIconPosition as getTriggerIconPosition,
+} from "./utils";
 
 const useActivities = (startDate: string, endDate: string) => {
   const [values, setValues] = React.useState<
@@ -22,8 +26,8 @@ const useActivities = (startDate: string, endDate: string) => {
 
   React.useLayoutEffect(() => {
     (async () => {
-      const d0 = dayjs(startDate).format("YYYYMMDD");
-      const d1 = dayjs(endDate).format("YYYYMMDD");
+      const date0 = new Date(startDate);
+      const date1 = new Date(endDate);
 
       const res: any[] = await logseq.DB.datascriptQuery(`
         [:find (pull ?p [*]) (count ?b)
@@ -31,15 +35,15 @@ const useActivities = (startDate: string, endDate: string) => {
          [?b :block/page ?p]
          [?p :block/journal? true]
          [?p :block/journal-day ?d]
-         [(>= ?d ${d0})] [(<= ?d ${d1})]]
+         [(>= ?d ${formatAsParam(date0)})] [(<= ?d ${formatAsParam(date1)})]]
      `);
 
       const mapping = Object.fromEntries(
         res.map(([page, count]: any[]) => {
           const datum = {
             count: count ?? 0,
-            date: dayjs("" + page["journal-day"], "YYYYMMDD").format(
-              defaultFormat
+            date: formatAsDashed(
+              parse(`${page["journal-day"]}`, "yyyyMMdd", new Date())
             ),
             originalName: page["original-name"] as string,
           };
@@ -47,18 +51,17 @@ const useActivities = (startDate: string, endDate: string) => {
         })
       );
 
-      const totalDays = dayjs(endDate).diff(dayjs(startDate), "d") + 1;
+      const totalDays = differenceInDays(date1, date0) + 1;
       const newValues: Datum[] = [];
       for (let i = 0; i < totalDays; i++) {
-        const date = dayjs(startDate).add(i, "d").format(defaultFormat);
+        const date = formatAsDashed(addDays(date0, i));
         if (mapping[date]) {
           newValues.push(mapping[date]);
         } else {
           newValues.push({
             date,
             count: 0,
-            // FIXME: only support default date format for now
-            originalName: dayjs(date).format("MMM Do, YYYY"),
+            originalName: formatAsLocale(date),
           });
         }
       }
@@ -167,24 +170,23 @@ const DateRange = ({
 }) => {
   React.useLayoutEffect(() => {
     if (!range) {
-      const endDate = dayjs(today).endOf("week").format(defaultFormat);
-      const startDate = dayjs(endDate)
-        .add(-NUM_WEEKS, "week")
-        .startOf("week")
-        .format(defaultFormat);
+      const endDate = formatAsDashed(endOfWeek(new Date(today)));
+      const startDate = formatAsDashed(
+        startOfWeek(addWeeks(endOfWeek(new Date(today)), -NUM_WEEKS))
+      );
       onRangeChange([startDate, endDate]);
     }
   }, [range]);
 
   const onRangeClick = (isPrev: boolean) => {
     const [, endDate] = range!;
-    const newEndDate = dayjs(endDate)
-      .add(isPrev ? -12 : 12, "weeks")
-      .format(defaultFormat);
-    const newStartDate = dayjs(newEndDate)
-      .add(-NUM_WEEKS, "week")
-      .startOf("week")
-      .format(defaultFormat);
+    const newEndDate = formatAsDashed(
+      addWeeks(new Date(endDate), isPrev ? -12 : 12)
+    );
+
+    const newStartDate = formatAsDashed(
+      startOfWeek(addWeeks(new Date(newEndDate), -NUM_WEEKS))
+    );
 
     onRangeChange([newStartDate, newEndDate]);
   };
@@ -195,11 +197,11 @@ const DateRange = ({
       <div className="text-xs mb-2">
         From
         <span className="date-range-tag" onClick={() => onRangeClick(true)}>
-          {dayjs(startDate).format("MMM Do, YYYY")}
+          {formatAsLocale(startDate)}
         </span>
         to
         <span className="date-range-tag" onClick={() => onRangeClick(false)}>
-          {dayjs(endDate).format("MMM Do, YYYY")}
+          {formatAsLocale(endDate)}
         </span>
       </div>
     );
@@ -208,7 +210,7 @@ const DateRange = ({
 };
 
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
-  const today = dayjs().format(defaultFormat);
+  const today = formatAsDashed(new Date());
   const [range, setRange] = React.useState<[string, string] | null>(null);
   const { bottom, right } = getTriggerIconPosition();
   return (

@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import { Heatmap } from "./Heatmap";
 import { useAppVisible, useThemeMode } from "./utils";
-
-console.log(await logseq.App.getUserInfo())
+const Heatmap = React.lazy(() =>
+  import("./Heatmap").then((d) => ({ default: d.Heatmap }))
+);
 
 function App() {
   const innerRef = useRef<HTMLDivElement>(null);
@@ -23,16 +23,18 @@ function App() {
   }, [visible]);
   if (started) {
     return (
-      <main
-        className={`absolute inset-0 ${themeMode}`}
-        onClick={(e) => {
-          if (!innerRef.current?.contains(e.target as any)) {
-            window.logseq.hideMainUI();
-          }
-        }}
-      >
-        <Heatmap ref={innerRef} />
-      </main>
+      <React.Suspense fallback="loading...">
+        <main
+          className={`absolute inset-0 ${themeMode}`}
+          onClick={(e) => {
+            if (!innerRef.current?.contains(e.target as any)) {
+              window.logseq.hideMainUI();
+            }
+          }}
+        >
+          <Heatmap ref={innerRef} />
+        </main>
+      </React.Suspense>
     );
   }
   return null;

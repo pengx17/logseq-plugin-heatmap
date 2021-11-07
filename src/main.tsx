@@ -5,7 +5,7 @@ import "virtual:windi-devtools";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { openIconName } from "./utils";
+import { getDisplayDateFormat, openIconName } from "./utils";
 
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
@@ -24,7 +24,8 @@ function main() {
 
   function createModel() {
     return {
-      show() {
+      async show() {
+        await getDisplayDateFormat();
         logseq.showMainUI();
       },
     };
@@ -53,7 +54,7 @@ function main() {
   logseq.App.registerUIItem("toolbar", {
     key: openIconName,
     template: `
-    <a data-on-click="show">
+    <a data-on-click="show" style="inline-block">
       <div class="logseq-heatmap-trigger-icon"></div>
     </a>
   `,
