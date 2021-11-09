@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.0...v2.2.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* optimize ([d83ee51](https://github.com/pengx17/logseq-plugin-heatmap/commit/d83ee518be34339888db20f25c7f1b265d77b529))
+
 # [2.2.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.1.1...v2.2.0) (2021-11-09)
 
 
