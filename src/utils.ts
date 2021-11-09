@@ -46,11 +46,12 @@ export const useSidebarVisible = () => {
 
 export const useCurrentPage = () => {
   const [page, setPage] = React.useState<null | PageEntity | BlockEntity>(null);
-  const setActivePage = async () => {
+  const setActivePage = React.useCallback(async () => {
     const p = await logseq.Editor.getCurrentPage();
     setPage(p);
-  };
+  }, []);
   React.useEffect(() => {
+    setActivePage();
     return logseq.App.onRouteChanged(setActivePage);
   }, [setActivePage]);
   return page;

@@ -20,9 +20,6 @@ import {
 } from "./utils";
 
 const useActivities = (startDate: string, endDate: string) => {
-  const [values, setValues] = React.useState<
-    { date: string; originalName: string; count: number }[]
-  >([]);
   const isMounted = useMountedState();
   const currentJournalDate = useCurrentJournalDate();
 
@@ -86,7 +83,6 @@ const useActivities = (startDate: string, endDate: string) => {
         datum.isActive = true;
       }
     }
-
     return newValues;
   }, [rawValue, currentJournalDate]);
 };
