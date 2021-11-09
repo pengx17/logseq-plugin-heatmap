@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.1.1...v2.2.0) (2021-11-09)
+
+
+### Features
+
+* make active journal page rect to have pink outline ([4ad0846](https://github.com/pengx17/logseq-plugin-heatmap/commit/4ad0846ff1b3fe24789631e82249db0268741f3f))
+
 ## [2.1.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.1.0...v2.1.1) (2021-11-07)
 
 
