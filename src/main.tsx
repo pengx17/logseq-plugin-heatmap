@@ -44,7 +44,7 @@ function main() {
     div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
       width: 1em;
       height: 1em;
-      margin: 1px 0.4em 0 0.4em;
+      margin: 2px 0.4em 0 0.4em;
       background-color: #26a641;
       border-radius: 4px;
       border: 1px solid #eee;

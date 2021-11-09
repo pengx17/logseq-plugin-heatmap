@@ -1,6 +1,7 @@
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import React, { useState } from "react";
 import { useMountedState } from "react-use";
+import { BlockEntity, PageEntity } from "@logseq/libs/dist/LSPlugin";
 
 export const openIconName = "heatmap-plugin-open";
 
@@ -43,6 +44,28 @@ export const useSidebarVisible = () => {
   return visible;
 };
 
+export const useCurrentPage = () => {
+  const [page, setPage] = React.useState<null | PageEntity | BlockEntity>(null);
+  const setActivePage = async () => {
+    const p = await logseq.Editor.getCurrentPage();
+    setPage(p);
+  };
+  React.useEffect(() => {
+    return logseq.App.onRouteChanged(setActivePage);
+  }, [setActivePage]);
+  return page;
+};
+
+export const useCurrentJournalDate = () => {
+  const page = useCurrentPage();
+  return React.useMemo(() => {
+    if (page && page["journal?"] && page.journalDay) {
+      return parseJournalDate(page.journalDay);
+    }
+    return null;
+  }, [page]);
+};
+
 export const useThemeMode = () => {
   const isMounted = useMountedState();
   const [mode, setMode] = React.useState<"dark" | "light">("light");
@@ -51,7 +74,7 @@ export const useThemeMode = () => {
       (top?.document
         .querySelector("html")
         ?.getAttribute("data-theme") as typeof mode) ??
-      (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
+        (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
     );
     logseq.App.onThemeModeChanged((s) => {
       console.log(s);
@@ -63,7 +86,6 @@ export const useThemeMode = () => {
 
   return mode;
 };
-
 
 export let displayDateFormat = "MMM do, yyyy";
 
@@ -92,4 +114,8 @@ export const formatAsParam = (d: Date | string) => {
 
 export const formatAsLocale = (d: Date | string) => {
   return format(toDate(d), displayDateFormat);
+};
+
+export const parseJournalDate = (d: number) => {
+  return parse(`${d}`, "yyyyMMdd", new Date());
 };

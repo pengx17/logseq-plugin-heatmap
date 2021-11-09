@@ -3,7 +3,6 @@ import {
   addWeeks,
   differenceInDays,
   endOfWeek,
-  parse,
   startOfWeek,
 } from "date-fns";
 import * as React from "react";
@@ -16,6 +15,8 @@ import {
   formatAsLocale,
   formatAsParam,
   getIconPosition as getTriggerIconPosition,
+  parseJournalDate,
+  useCurrentJournalDate,
 } from "./utils";
 
 const useActivities = (startDate: string, endDate: string) => {
@@ -23,6 +24,9 @@ const useActivities = (startDate: string, endDate: string) => {
     { date: string; originalName: string; count: number }[]
   >([]);
   const isMounted = useMountedState();
+  const currentJournalDate = useCurrentJournalDate();
+
+  const [rawValue, setRawValue] = React.useState<any[]>([]);
 
   React.useLayoutEffect(() => {
     (async () => {
@@ -38,44 +42,61 @@ const useActivities = (startDate: string, endDate: string) => {
          [(>= ?d ${formatAsParam(date0)})] [(<= ?d ${formatAsParam(date1)})]]
      `);
 
-      const mapping = Object.fromEntries(
-        res.map(([page, count]: any[]) => {
-          const datum = {
-            count: count ?? 0,
-            date: formatAsDashed(
-              parse(`${page["journal-day"]}`, "yyyyMMdd", new Date())
-            ),
-            originalName: page["original-name"] as string,
-          };
-          return [datum.date, datum];
-        })
-      );
-
-      const totalDays = differenceInDays(date1, date0) + 1;
-      const newValues: Datum[] = [];
-      for (let i = 0; i < totalDays; i++) {
-        const date = formatAsDashed(addDays(date0, i));
-        if (mapping[date]) {
-          newValues.push(mapping[date]);
-        } else {
-          newValues.push({
-            date,
-            count: 0,
-            originalName: formatAsLocale(date),
-          });
-        }
-      }
-
       if (isMounted()) {
-        setValues(newValues);
+        setRawValue(res);
       }
     })();
   }, [startDate, endDate]);
 
-  return values;
+  return React.useMemo(() => {
+    const date0 = new Date(startDate);
+    const date1 = new Date(endDate);
+    const mapping = Object.fromEntries(
+      rawValue.map(([page, count]: any[]) => {
+        const date = parseJournalDate(page["journal-day"]);
+        const datum = {
+          count: count ?? 0,
+          date: formatAsDashed(date),
+          originalName: page["original-name"] as string,
+        };
+        return [datum.date, datum];
+      })
+    );
+
+    const totalDays = differenceInDays(date1, date0) + 1;
+    const newValues: Datum[] = [];
+    for (let i = 0; i < totalDays; i++) {
+      const date = formatAsDashed(addDays(date0, i));
+      if (mapping[date]) {
+        newValues.push(mapping[date]);
+      } else {
+        newValues.push({
+          date,
+          count: 0,
+          originalName: formatAsLocale(date),
+        });
+      }
+    }
+
+    if (currentJournalDate) {
+      const datum = newValues.find(
+        (v) => formatAsDashed(currentJournalDate) === v.date
+      );
+      if (datum) {
+        datum.isActive = true;
+      }
+    }
+
+    return newValues;
+  }, [rawValue, currentJournalDate]);
 };
 
-type Datum = ReturnType<typeof useActivities>[number];
+type Datum = {
+  date: string;
+  originalName: string;
+  count: number;
+  isActive?: boolean;
+};
 
 // We have 1 ~ 4 scales for now:
 // [1,  10] -> 1
@@ -132,13 +153,17 @@ const HeatmapChart = ({
           if (today === value?.date) {
             classes.push("today");
           }
+          if (value?.isActive) {
+            classes.push("active");
+          }
           return classes.join(" ");
         }}
         tooltipDataAttrs={getTooltipDataAttrs}
         onClick={(d: Datum) => {
           if (d) {
             logseq.App.pushState("page", { name: d.originalName });
-            logseq.hideMainUI();
+            // Allow the user to quickly navigate between different days
+            // logseq.hideMainUI();
           }
         }}
         gutterSize={4}

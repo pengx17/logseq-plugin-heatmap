@@ -19,6 +19,10 @@ svg.react-calendar-heatmap {
   font-size: 5px;
 }
 
+.react-calendar-heatmap rect {
+  @apply outline-none;
+}
+
 .react-calendar-heatmap rect:hover {
   stroke: #555 !important;
   stroke-width: 1px;
@@ -26,6 +30,10 @@ svg.react-calendar-heatmap {
 
 .react-calendar-heatmap rect.today {
   stroke: #dd7c09 !important;
+}
+
+.react-calendar-heatmap rect.active {
+  stroke: rgb(255, 0, 200) !important;
 }
 
 /*
