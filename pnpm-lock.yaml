@@ -7,7 +7,7 @@ specifiers:
   '@semantic-release/git': 9.0.1
   '@semantic-release/npm': 7.1.3
   '@types/node': 16.11.7
-  '@types/react': 17.0.34
+  '@types/react': 17.0.35
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
   '@types/uuid': ^8.3.1
@@ -45,7 +45,7 @@ devDependencies:
   '@semantic-release/git': 9.0.1_semantic-release@17.4.7
   '@semantic-release/npm': 7.1.3_semantic-release@17.4.7
   '@types/node': 16.11.7
-  '@types/react': 17.0.34
+  '@types/react': 17.0.35
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
   '@typescript-eslint/eslint-plugin': 4.33.0_cc617358c89d3f38c52462f6d809db4c
@@ -669,21 +669,21 @@ packages:
   /@types/react-calendar-heatmap/1.6.3:
     resolution: {integrity: sha512-C6hN9Nl0NBqeJEkivwwf/bvWNoPwpwGSNABwYl0yHD20rClSJqRgYoGPKDIn8QqoYHGJsTFJdFbBAZRPlJ/+qg==}
     dependencies:
-      '@types/react': 17.0.34
+      '@types/react': 17.0.35
     dev: true
 
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
-      '@types/react': 17.0.34
+      '@types/react': 17.0.35
     dev: true
 
-  /@types/react/17.0.34:
-    resolution: {integrity: sha512-46FEGrMjc2+8XhHXILr+3+/sTe3OfzSPU9YGKILLrUYbQ1CLQC9Daqo1KzENGXAWwrFwiY0l4ZbF20gRvgpWTg==}
+  /@types/react/17.0.35:
+    resolution: {integrity: sha512-r3C8/TJuri/SLZiiwwxQoLAoavaczARfT9up9b4Jr65+ErAUX3MIkU0oMOQnrpfgHme8zIqZLX7O5nnjm5Wayw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
-      csstype: 3.0.8
+      csstype: 3.0.9
     dev: true
 
   /@types/retry/0.12.1:
@@ -1261,12 +1261,8 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /csstype/3.0.8:
-    resolution: {integrity: sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==}
-
   /csstype/3.0.9:
     resolution: {integrity: sha512-rpw6JPxK6Rfg1zLOYCSwle2GFOOsnjmDYDaBwEcwoOg4qlsIVCN789VkBZDJAGi4T07gI4YSutR43t9Zz4Lzuw==}
-    dev: false
 
   /date-fns/2.25.0:
     resolution: {integrity: sha512-ovYRFnTrbGPD4nqaEqescPEv1mNwvt+UTqI3Ay9SzNtey9NZnYu6E2qCcBBgJ6/2VF1zGGygpyTDITqpQQ5e+w==}
@@ -2705,7 +2701,7 @@ packages:
       react-dom: '*'
     dependencies:
       css-tree: 1.1.3
-      csstype: 3.0.8
+      csstype: 3.0.9
       fastest-stable-stringify: 2.0.2
       inline-style-prefixer: 6.0.0
       react: 17.0.2
