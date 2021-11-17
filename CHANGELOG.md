@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.2...v2.2.3) (2021-11-17)
+
+
+### Bug Fixes
+
+* heatmap displaying position ([8711ea3](https://github.com/pengx17/logseq-plugin-heatmap/commit/8711ea3eaa5a766240242eb6041d557d6db5cca4))
+
 ## [2.2.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.1...v2.2.2) (2021-11-17)
 
 
