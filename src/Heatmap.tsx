@@ -36,7 +36,8 @@ const useActivities = (startDate: string, endDate: string) => {
          [?b :block/page ?p]
          [?p :block/journal? true]
          [?p :block/journal-day ?d]
-         [(>= ?d ${formatAsParam(date0)})] [(<= ?d ${formatAsParam(date1)})]]
+         [(>= ?d ${formatAsParam(date0)})]
+         [(<= ?d ${formatAsParam(date1)})]]
      `);
 
       if (isMounted()) {

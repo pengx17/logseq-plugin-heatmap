@@ -41,7 +41,7 @@ function main() {
   top[magicKey] = true;
 
   logseq.provideStyle(css`
-    div[data-injected-ui=${openIconName}-${pluginId}] .logseq-heatmap-trigger-icon {
+    .logseq-heatmap-trigger-icon {
       width: 1em;
       height: 1em;
       margin: 2px 0.4em 0 0.4em;
@@ -54,7 +54,7 @@ function main() {
   logseq.App.registerUIItem("toolbar", {
     key: openIconName,
     template: `
-    <a data-on-click="show" style="inline-block">
+    <a data-on-click="show">
       <div class="logseq-heatmap-trigger-icon"></div>
     </a>
   `,
@@ -64,7 +64,7 @@ function main() {
 if (process.env.NODE_ENV === "development") {
   // @ts-expect-error
   if (top[magicKey]) {
-    logseq.App.relaunch();
+    top?.location.reload();
   }
 }
 
