@@ -3,15 +3,7 @@ import React, { useState } from "react";
 import { useMountedState } from "react-use";
 import { BlockEntity, PageEntity } from "@logseq/libs/dist/LSPlugin";
 
-export const openIconName = "heatmap-plugin-open";
-
-export function getIconPosition() {
-  const pluginId = logseq.baseInfo.id;
-  const el = top?.document.querySelector(
-    `div[data-injected-ui=${openIconName}-${pluginId}]`
-  );
-  return el?.getBoundingClientRect() ?? { bottom: 10, right: 10 };
-}
+export const triggerIconName = "logseq-heatmap-trigger-icon";
 
 export const useAppVisible = () => {
   const [visible, setVisible] = useState(logseq.isMainUIVisible);

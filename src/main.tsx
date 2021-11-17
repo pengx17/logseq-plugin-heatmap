@@ -5,7 +5,7 @@ import "virtual:windi-devtools";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { getDisplayDateFormat, openIconName } from "./utils";
+import { getDisplayDateFormat, triggerIconName } from "./utils";
 
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
@@ -41,7 +41,7 @@ function main() {
   top[magicKey] = true;
 
   logseq.provideStyle(css`
-    .logseq-heatmap-trigger-icon {
+    .${triggerIconName} {
       width: 1em;
       height: 1em;
       margin: 2px 0.4em 0 0.4em;
@@ -52,10 +52,10 @@ function main() {
   `);
 
   logseq.App.registerUIItem("toolbar", {
-    key: openIconName,
+    key: "heatmap-plugin-open",
     template: `
     <a data-on-click="show">
-      <div class="logseq-heatmap-trigger-icon"></div>
+      <div class="${triggerIconName}"></div>
     </a>
   `,
   });

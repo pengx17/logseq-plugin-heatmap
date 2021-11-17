@@ -8,13 +8,13 @@ import {
 import * as React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
-import { useMountedState } from "react-use";
+import { useMountedState, useWindowSize } from "react-use";
 import "./Heatmap.css";
 import {
   formatAsDashed,
   formatAsLocale,
   formatAsParam,
-  getIconPosition as getTriggerIconPosition,
+  triggerIconName,
   parseJournalDate,
   useCurrentJournalDate,
 } from "./utils";
@@ -231,10 +231,28 @@ const DateRange = ({
   return null;
 };
 
+function useIconPosition() {
+  const windowSize = useWindowSize();
+  return React.useMemo(() => {
+    let right = windowSize.width - 10;
+    let bottom = 20;
+    if (top?.document) {
+      const iconRect = top?.document
+        .querySelector(`.${triggerIconName}`)
+        ?.getBoundingClientRect();
+      if (iconRect) {
+        right = iconRect.right;
+        bottom = iconRect.bottom;
+      }
+    }
+    return { right, bottom };
+  }, [windowSize]);
+}
+
 export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const today = formatAsDashed(new Date());
   const [range, setRange] = React.useState<[string, string] | null>(null);
-  const { bottom, right } = getTriggerIconPosition();
+  const { bottom, right } = useIconPosition();
   return (
     <div
       ref={ref}
