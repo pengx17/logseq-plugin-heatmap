@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.1...v2.2.2) (2021-11-17)
+
+
+### Bug Fixes
+
+* heatmap icon is not displaying in 0.4.6 ([f66e30c](https://github.com/pengx17/logseq-plugin-heatmap/commit/f66e30cac2a1da84da9ac8f2d827c5986f8bd6b5))
+
 ## [2.2.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.0...v2.2.1) (2021-11-09)
 
 
