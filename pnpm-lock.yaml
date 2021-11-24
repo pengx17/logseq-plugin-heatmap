@@ -7,7 +7,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 8.0.3
   '@types/node': 16.11.10
-  '@types/react': 17.0.36
+  '@types/react': 17.0.37
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
   '@types/uuid': ^8.3.1
@@ -45,7 +45,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@18.0.1
   '@semantic-release/npm': 8.0.3_semantic-release@18.0.1
   '@types/node': 16.11.10
-  '@types/react': 17.0.36
+  '@types/react': 17.0.37
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
   '@typescript-eslint/eslint-plugin': 5.4.0_5c8ff4cecd5a55e744866c0654edac32
@@ -689,17 +689,17 @@ packages:
   /@types/react-calendar-heatmap/1.6.3:
     resolution: {integrity: sha512-C6hN9Nl0NBqeJEkivwwf/bvWNoPwpwGSNABwYl0yHD20rClSJqRgYoGPKDIn8QqoYHGJsTFJdFbBAZRPlJ/+qg==}
     dependencies:
-      '@types/react': 17.0.36
+      '@types/react': 17.0.37
     dev: true
 
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
-      '@types/react': 17.0.36
+      '@types/react': 17.0.37
     dev: true
 
-  /@types/react/17.0.36:
-    resolution: {integrity: sha512-CUFUp01OdfbpN/76v4koqgcpcRGT3sYOq3U3N6q0ZVGcyeP40NUdVU+EWe3hs34RNaTefiYyBzOpxBBidCc5zw==}
+  /@types/react/17.0.37:
+    resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
