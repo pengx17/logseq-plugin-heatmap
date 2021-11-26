@@ -8,9 +8,12 @@ be able to calculate a more accurate block numbers.
 
 ## How to use?
 
-Until Logseq has a plugin marketplace, you need to
+Firstly, turn on Logseq developer mode
 
-- turn on Logseq developer mode
+### Option 1: directly install via Marketplace
+
+### Option 2: manually load
+
 - [download the prebuilt package here](https://github.com/pengx17/logseq-plugin-heatmap/releases)
 - unzip the zip file and load from Logseq plugins page
 
