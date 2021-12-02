@@ -26,7 +26,7 @@ specifiers:
   semantic-release: 18.0.1
   typescript: 4.5.2
   vite: 2.6.14
-  vite-plugin-windicss: 1.5.3
+  vite-plugin-windicss: 1.5.4
   windicss: 3.2.1
 
 dependencies:
@@ -57,7 +57,7 @@ devDependencies:
   semantic-release: 18.0.1
   typescript: 4.5.2
   vite: 2.6.14
-  vite-plugin-windicss: 1.5.3_vite@2.6.14
+  vite-plugin-windicss: 1.5.4_vite@2.6.14
   windicss: 3.2.1
 
 packages:
@@ -841,8 +841,8 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/config/1.5.3:
-    resolution: {integrity: sha512-DXUR+LWOWwG+prkcvey4IV4V9BvigOcfuLP28k21fO3UkfS6G6HRRgf+STB0AgKrXIGlUDDHfoPvEbndfUlYjg==}
+  /@windicss/config/1.5.4:
+    resolution: {integrity: sha512-muRPFulqh7nU3VrsPb5+k6ulNyiw8VGg62zAWRZIBfeCRXZb2gV1Q8a/tPn8X1T/+HTt4f/1bzFiusqMKscmlw==}
     dependencies:
       debug: 4.3.3
       jiti: 1.12.9
@@ -851,11 +851,11 @@ packages:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.5.3:
-    resolution: {integrity: sha512-6C6R/wB2vzaiWn1Tv95FaK5/932UnnbObwitusyDcuCDmCM97aCCB93CYLZCtQtPdPlLYODezinPFhdfMm746w==}
+  /@windicss/plugin-utils/1.5.4:
+    resolution: {integrity: sha512-fS4y52OYB9rIzEUolIWIrrHYuaQfcqTaX3ISbFUiNbvNgH97JATjzB2iOnNqWNy6pH3M8RP0TqYQOOCCeanDoA==}
     dependencies:
       '@antfu/utils': 0.3.0
-      '@windicss/config': 1.5.3
+      '@windicss/config': 1.5.4
       debug: 4.3.3
       fast-glob: 3.2.7
       magic-string: 0.25.7
@@ -3942,12 +3942,12 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-windicss/1.5.3_vite@2.6.14:
-    resolution: {integrity: sha512-t9iu+fs1egguTK/+RdV/UCp11R69EQhVvvGcrNhCMt43DQF/RU19gHZUXB8wspm0V02Bz+rSmtqy/h3laJ9Z5Q==}
+  /vite-plugin-windicss/1.5.4_vite@2.6.14:
+    resolution: {integrity: sha512-bG2IERA9J50MGq1QEbGC/PjrkVIaq2b3LilCeidyIpmFV/4aR14/wGDe83SobF+8coIeJ+23S0uDK/fXX5X0pQ==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.5.3
+      '@windicss/plugin-utils': 1.5.4
       debug: 4.3.3
       kolorist: 1.5.0
       vite: 2.6.14
