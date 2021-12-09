@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.3...v2.3.0) (2021-12-09)
+
+
+### Features
+
+* adapt logseq 0.5.2 ([9a32c40](https://github.com/pengx17/logseq-plugin-heatmap/commit/9a32c405b39695288775c21b5e01272f25f183ef))
+
 ## [2.2.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.2...v2.2.3) (2021-11-17)
 
 

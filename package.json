@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-heatmap",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "main": "dist/index.html",
   "scripts": {
     "dev": "vite",
