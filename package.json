@@ -22,7 +22,7 @@
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/npm": "8.0.3",
-    "@types/node": "16.11.14",
+    "@types/node": "16.11.15",
     "@types/react": "17.0.37",
     "@types/react-calendar-heatmap": "1.6.3",
     "@types/react-dom": "17.0.11",
