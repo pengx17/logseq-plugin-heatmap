@@ -34,7 +34,7 @@
     "eslint-plugin-react": "7.28.0",
     "semantic-release": "18.0.1",
     "typescript": "4.5.4",
-    "vite": "2.7.7",
+    "vite": "2.7.8",
     "vite-plugin-windicss": "1.6.1",
     "windicss": "3.4.1"
   },
