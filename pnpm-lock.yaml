@@ -27,7 +27,7 @@ specifiers:
   typescript: 4.5.4
   vite: 2.7.12
   vite-plugin-windicss: 1.6.2
-  windicss: 3.4.2
+  windicss: 3.4.3
 
 dependencies:
   '@logseq/libs': 0.0.1-alpha.31
@@ -58,7 +58,7 @@ devDependencies:
   typescript: 4.5.4
   vite: 2.7.12
   vite-plugin-windicss: 1.6.2_vite@2.7.12
-  windicss: 3.4.2
+  windicss: 3.4.3
 
 packages:
 
@@ -852,7 +852,7 @@ packages:
     dependencies:
       debug: 4.3.3
       jiti: 1.12.9
-      windicss: 3.4.2
+      windicss: 3.4.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -866,7 +866,7 @@ packages:
       fast-glob: 3.2.10
       magic-string: 0.25.7
       micromatch: 4.0.4
-      windicss: 3.4.2
+      windicss: 3.4.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3956,7 +3956,7 @@ packages:
       debug: 4.3.3
       kolorist: 1.5.1
       vite: 2.7.12
-      windicss: 3.4.2
+      windicss: 3.4.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4014,8 +4014,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /windicss/3.4.2:
-    resolution: {integrity: sha512-YieqWaXiwPu0JJoB7z03RXdjZjQQJtMZAeXUXu/j3JXSMhIgV/2rUXu4Q7QrworRlbaASZlFhxjnL/78aAty+Q==}
+  /windicss/3.4.3:
+    resolution: {integrity: sha512-UnugThsvEgy8RsPm4/B5DYMCAqvZzD6yWU7Anh+f07t5RSJ8zvmAylGLbXrHPJEmCKzo2Mf+fOUvISH7IJqM3A==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true
