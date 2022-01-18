@@ -6,7 +6,7 @@ specifiers:
   '@semantic-release/exec': 6.0.3
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 8.0.3
-  '@types/node': 16.11.20
+  '@types/node': 16.11.21
   '@types/react': 17.0.38
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
@@ -44,7 +44,7 @@ devDependencies:
   '@semantic-release/exec': 6.0.3_semantic-release@18.0.1
   '@semantic-release/git': 10.0.1_semantic-release@18.0.1
   '@semantic-release/npm': 8.0.3_semantic-release@18.0.1
-  '@types/node': 16.11.20
+  '@types/node': 16.11.21
   '@types/react': 17.0.38
   '@types/react-calendar-heatmap': 1.6.3
   '@types/react-dom': 17.0.11
@@ -656,8 +656,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node/16.11.20:
-    resolution: {integrity: sha512-lAKaZ0Lc1Umwd0AqLr6iy5U8u/1DpK7/JzNgQn9cMMUk2mFR8bbhEP8BQrI9Cm5CU0bOVCaWbkGBvgqKMOJHsw==}
+  /@types/node/16.11.21:
+    resolution: {integrity: sha512-Pf8M1XD9i1ksZEcCP8vuSNwooJ/bZapNmIzpmsMaL+jMI+8mEYU3PKvs+xDNuQcJWF/x24WzY4qxLtB0zNow9A==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
