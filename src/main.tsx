@@ -1,6 +1,4 @@
 import "@logseq/libs";
-import "virtual:windi.css";
-import "virtual:windi-devtools";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -9,8 +7,6 @@ import { getDisplayDateFormat, triggerIconName } from "./utils";
 
 // @ts-expect-error
 const css = (t, ...args) => String.raw(t, ...args);
-
-const magicKey = "__heatmap__plugin__loaded__";
 
 function main() {
   const pluginId = logseq.baseInfo.id;
@@ -37,9 +33,6 @@ function main() {
     maxWidth: "calc(100% - 10px)",
   });
 
-  // @ts-expect-error
-  top[magicKey] = true;
-
   logseq.provideStyle(css`
     .${triggerIconName} {
       width: 18px;
@@ -59,13 +52,6 @@ function main() {
     </a>
   `,
   });
-}
-
-if (process.env.NODE_ENV === "development") {
-  // @ts-expect-error
-  if (top[magicKey]) {
-    top?.location.reload();
-  }
 }
 
 logseq.ready(main).catch(console.error);
