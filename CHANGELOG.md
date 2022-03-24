@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.1...v2.3.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* add an error boundary to catch errors ([9c5cc82](https://github.com/pengx17/logseq-plugin-heatmap/commit/9c5cc823ef16d33eb0e87c91862aed84a30ec1a6))
+
 ## [2.3.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.0...v2.3.1) (2022-03-24)
 
 
