@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.0...v2.3.1) (2022-03-24)
+
+
+### Bug Fixes
+
+* add back missing windicss style ([1d5d89b](https://github.com/pengx17/logseq-plugin-heatmap/commit/1d5d89b94f6f369d7c4ce0be67ee78cf53675820))
+
 # [2.3.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.2.3...v2.3.0) (2021-12-09)
 
 
