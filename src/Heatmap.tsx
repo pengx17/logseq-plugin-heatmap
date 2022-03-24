@@ -5,6 +5,8 @@ import {
   endOfWeek,
   startOfWeek,
 } from "date-fns";
+import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+
 import * as React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import ReactTooltip from "react-tooltip";
@@ -18,6 +20,14 @@ import {
   parseJournalDate,
   useCurrentJournalDate,
 } from "./utils";
+
+function ErrorFallback({ error }: FallbackProps) {
+  return (
+    <div role="alert" className="text-red-500 font-semibold">
+      <p>Heatmap failed to render. Can you re-index your graph and try again?</p>
+    </div>
+  );
+}
 
 const useActivities = (startDate: string, endDate: string) => {
   const isMounted = useMountedState();
@@ -259,10 +269,12 @@ export const Heatmap = React.forwardRef<HTMLDivElement>(({}, ref) => {
       className="heatmap-root"
       style={{ left: right - 300, top: bottom + 20 }}
     >
-      <DateRange range={range} onRangeChange={setRange} today={today} />
-      {range && (
-        <HeatmapChart today={today} endDate={range[1]} startDate={range[0]} />
-      )}
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <DateRange range={range} onRangeChange={setRange} today={today} />
+        {range && (
+          <HeatmapChart today={today} endDate={range[1]} startDate={range[0]} />
+        )}
+      </ErrorBoundary>
     </div>
   );
 });
