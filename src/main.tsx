@@ -2,7 +2,7 @@ import "@logseq/libs";
 import "virtual:windi.css";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import { getDisplayDateFormat, triggerIconName } from "./utils";
 
@@ -12,11 +12,11 @@ const css = (t, ...args) => String.raw(t, ...args);
 function main() {
   const pluginId = logseq.baseInfo.id;
   console.info(`#${pluginId}: MAIN`);
-  ReactDOM.render(
+  const node = ReactDOM.createRoot(document.getElementById("app")!);
+  node.render(
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
-    document.getElementById("app")
+    </React.StrictMode>
   );
 
   function createModel() {
