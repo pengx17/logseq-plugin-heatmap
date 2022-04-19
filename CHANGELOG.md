@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.2...v2.3.3) (2022-04-19)
+
+
+### Bug Fixes
+
+* filter out empty blocks ([c31c14a](https://github.com/pengx17/logseq-plugin-heatmap/commit/c31c14aae2be5687d86e95409eecca3c4d5ce6d3))
+
 ## [2.3.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.1...v2.3.2) (2022-03-24)
 
 
