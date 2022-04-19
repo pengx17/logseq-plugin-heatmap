@@ -24,7 +24,9 @@ import {
 function ErrorFallback({ error }: FallbackProps) {
   return (
     <div role="alert" className="text-red-500 font-semibold">
-      <p>Heatmap failed to render. Can you re-index your graph and try again?</p>
+      <p>
+        Heatmap failed to render. Can you re-index your graph and try again?
+      </p>
     </div>
   );
 }
@@ -46,6 +48,9 @@ const useActivities = (startDate: string, endDate: string) => {
          [?b :block/page ?p]
          [?p :block/journal? true]
          [?p :block/journal-day ?d]
+         [?b :block/content ?c]
+         [(clojure.string/blank? ?c) ?empty]
+         [(not ?empty)]
          [(>= ?d ${formatAsParam(date0)})]
          [(<= ?d ${formatAsParam(date1)})]]
      `);

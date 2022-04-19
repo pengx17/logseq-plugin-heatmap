@@ -70,7 +70,6 @@ export const useThemeMode = () => {
         (matchMedia("prefers-color-scheme: dark").matches ? "dark" : "light")
     );
     logseq.App.onThemeModeChanged((s) => {
-      console.log(s);
       if (isMounted()) {
         setMode(s.mode);
       }
