@@ -1,3 +1,10 @@
+## [2.3.4](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.3...v2.3.4) (2022-05-03)
+
+
+### Bug Fixes
+
+* correct scale count ([df257a1](https://github.com/pengx17/logseq-plugin-heatmap/commit/df257a1cd06f803ca1b77e18c8fbb111ce114efd))
+
 ## [2.3.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.2...v2.3.3) (2022-04-19)
 
 
