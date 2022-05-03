@@ -116,7 +116,7 @@ type Datum = {
 // [21, 30] -> 3
 // > 31     -> 4
 const scaleCount = (v: number) => {
-  return Math.ceil(Math.min(v, 30) / 10);
+  return Math.ceil(Math.min(v, 40) / 10);
 };
 
 const getTooltipDataAttrs = (value: Datum) => {
