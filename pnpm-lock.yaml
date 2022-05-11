@@ -26,7 +26,7 @@ specifiers:
   react-use: ^17.3.2
   semantic-release: 19.0.2
   typescript: 4.6.4
-  vite: 2.9.8
+  vite: 2.9.9
   vite-plugin-logseq: ^1.1.2
   vite-plugin-windicss: 1.8.4
   windicss: 3.5.2
@@ -59,9 +59,9 @@ devDependencies:
   react-error-boundary: 3.1.4_react@18.1.0
   semantic-release: 19.0.2
   typescript: 4.6.4
-  vite: 2.9.8
+  vite: 2.9.9
   vite-plugin-logseq: 1.1.2
-  vite-plugin-windicss: 1.8.4_vite@2.9.8
+  vite-plugin-windicss: 1.8.4_vite@2.9.9
   windicss: 3.5.2
 
 packages:
@@ -4092,7 +4092,7 @@ packages:
       magic-string: 0.26.1
     dev: true
 
-  /vite-plugin-windicss/1.8.4_vite@2.9.8:
+  /vite-plugin-windicss/1.8.4_vite@2.9.9:
     resolution: {integrity: sha512-LSZAO8BZn3x406GRbYX5t5ONXXJVdqiQtN1qrznLA/Dy5/NzZVhfcrL6N1qEYYO7HsCDT4pLAjTzObvDnM9Y8A==}
     peerDependencies:
       vite: ^2.0.1
@@ -4100,14 +4100,14 @@ packages:
       '@windicss/plugin-utils': 1.8.4
       debug: 4.3.4
       kolorist: 1.5.1
-      vite: 2.9.8
+      vite: 2.9.9
       windicss: 3.5.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.9.8:
-    resolution: {integrity: sha512-zsBGwn5UT3YS0NLSJ7hnR54+vUKfgzMUh/Z9CxF1YKEBVIe213+63jrFLmZphgGI5zXwQCSmqIdbPuE8NJywPw==}
+  /vite/2.9.9:
+    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
