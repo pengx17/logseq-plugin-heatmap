@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.4...v2.4.0) (2022-06-05)
+
+
+### Features
+
+* try i18n for some texts ([da8ed62](https://github.com/pengx17/logseq-plugin-heatmap/commit/da8ed62a57c6232043882af51df65208dff92d92))
+
 ## [2.3.4](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.3...v2.3.4) (2022-05-03)
 
 
