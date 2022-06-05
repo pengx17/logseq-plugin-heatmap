@@ -13,11 +13,7 @@ function main() {
   const pluginId = logseq.baseInfo.id;
   console.info(`#${pluginId}: MAIN`);
   const node = ReactDOM.createRoot(document.getElementById("app")!);
-  node.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+  node.render(<App />);
 
   function createModel() {
     return {

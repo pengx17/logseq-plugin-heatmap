@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { setLocale } from "./translate";
 import { useAppVisible, useThemeMode } from "./utils";
 const Heatmap = React.lazy(() =>
   import("./Heatmap").then((d) => ({ default: d.Heatmap }))
@@ -10,6 +11,10 @@ function App() {
   const themeMode = useThemeMode();
   const [started, setStarted] = React.useState(visible);
   React.useEffect(() => {
+    logseq.App.getUserConfigs().then((config) => {
+      setLocale(config.preferredLanguage);
+    });
+
     if (visible) {
       setStarted(true);
     } else {
@@ -21,6 +26,7 @@ function App() {
       };
     }
   }, [visible]);
+
   if (started) {
     return (
       <React.Suspense fallback="loading...">

@@ -20,6 +20,7 @@ import {
   parseJournalDate,
   useCurrentJournalDate,
 } from "./utils";
+import { t } from "./translate";
 
 function ErrorFallback({ error }: FallbackProps) {
   return (
@@ -127,7 +128,10 @@ const getTooltipDataAttrs = (value: Datum) => {
   // Configuration for react-tooltip
   const count = value.count === 0 ? "No" : value.count;
   return {
-    "data-tip": `<strong>${count} journal blocks</strong> on <span class="opacity-70">${value.originalName}</span>`,
+    "data-tip": t("tooltip_hint", {
+      count,
+      originalName: value.originalName,
+    }),
   };
 };
 
@@ -184,8 +188,8 @@ const HeatmapChart = ({
         }}
       />
       <div className="text-xs text-right mt-1">
-        Total journal blocks during this period:{" "}
-        <span className="font-medium">
+        {t('total_status_bottom')}
+        <span className="font-medium ml-0.5">
           {new Intl.NumberFormat().format(totalBlocks)}
         </span>
       </div>

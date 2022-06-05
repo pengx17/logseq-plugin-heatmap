@@ -1,0 +1,4 @@
+{
+  "tooltip_hint": "<span class=\"opacity-70\">${originalName}</span> 有 ${count} 个块",
+  "total_status_bottom": "当前时间区间日记块总数:"
+}

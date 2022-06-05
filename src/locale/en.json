@@ -1,0 +1,4 @@
+{
+  "tooltip_hint": "<strong>${count} journal blocks</strong> on <span class=\"opacity-70\">${originalName}</span>",
+  "total_status_bottom": "Total journal blocks during this period: "
+}
