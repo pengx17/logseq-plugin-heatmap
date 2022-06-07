@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.4.0...v2.4.1) (2022-06-07)
+
+
+### Bug Fixes
+
+* lock file ([c4082a9](https://github.com/pengx17/logseq-plugin-heatmap/commit/c4082a9f454c6790d8109f3c235c3715d9989261))
+
 # [2.4.0](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.3.4...v2.4.0) (2022-06-05)
 
 
