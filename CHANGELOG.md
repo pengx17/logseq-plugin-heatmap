@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.4.1...v2.4.2) (2022-06-07)
+
+
+### Bug Fixes
+
+* revert i18n usage ([3da0c9c](https://github.com/pengx17/logseq-plugin-heatmap/commit/3da0c9ccef6e92c533973702c0e183c03326ad87))
+
 ## [2.4.1](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.4.0...v2.4.1) (2022-06-07)
 
 
