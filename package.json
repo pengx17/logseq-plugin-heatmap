@@ -39,7 +39,7 @@
     "vite": "2.9.12",
     "vite-plugin-logseq": "^1.1.2",
     "vite-plugin-windicss": "1.8.4",
-    "windicss": "3.5.4"
+    "windicss": "3.5.5"
   },
   "logseq": {
     "id": "_pengx17-logseq-heatmap",
