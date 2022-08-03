@@ -14,7 +14,7 @@
     "react": "^18.1.0",
     "react-calendar-heatmap": "^1.8.1",
     "react-dom": "^18.1.0",
-    "react-suspense-fetch": "^0.5.1",
+    "react-suspense-fetch": "^0.6.0",
     "react-tooltip": "^4.2.21",
     "react-use": "^17.4.0"
   },
