@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.4.2...v2.4.3) (2022-10-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-suspense-fetch to ^0.6.0 ([a78fa1a](https://github.com/pengx17/logseq-plugin-heatmap/commit/a78fa1ad727ff42545b33a8cad7d9e924676dce5))
+
 ## [2.4.2](https://github.com/pengx17/logseq-plugin-heatmap/compare/v2.4.1...v2.4.2) (2022-06-07)
 
 
