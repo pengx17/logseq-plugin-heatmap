@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@logseq/libs': 0.0.6
-  '@semantic-release/changelog': 6.0.1
+  '@semantic-release/changelog': 6.0.2
   '@semantic-release/exec': 6.0.3
   '@semantic-release/git': 10.0.1
   '@semantic-release/npm': 9.0.1
@@ -44,7 +44,7 @@ dependencies:
   react-use: 17.4.0_ef5jwxihqo6n7gxfmzogljlgcm
 
 devDependencies:
-  '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
+  '@semantic-release/changelog': 6.0.2_semantic-release@19.0.5
   '@semantic-release/exec': 6.0.3_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
@@ -573,15 +573,15 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@semantic-release/changelog/6.0.1_semantic-release@19.0.5:
-    resolution: {integrity: sha512-FT+tAGdWHr0RCM3EpWegWnvXJ05LQtBkQUaQRIExONoXjVjLuOILNm4DEKNaV+GAQyJjbLRVs57ti//GypH6PA==}
+  /@semantic-release/changelog/6.0.2_semantic-release@19.0.5:
+    resolution: {integrity: sha512-jHqfTkoPbDEOAgAP18mGP53IxeMwxTISN+GwTRy9uLu58UjARoZU8ScCgWGeO2WPkEsm57H8AkyY02W2ntIlIw==}
     engines: {node: '>=14.17'}
     peerDependencies:
       semantic-release: '>=18.0.0'
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
-      fs-extra: 9.1.0
+      fs-extra: 11.0.0
       lodash: 4.17.21
       semantic-release: 19.0.5
     dev: true
@@ -1091,11 +1091,6 @@ packages:
   /arrify/1.0.1:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /at-least-node/1.0.0:
-    resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
-    engines: {node: '>= 4.0.0'}
     dev: true
 
   /balanced-match/1.0.2:
@@ -2091,11 +2086,10 @@ packages:
       universalify: 2.0.0
     dev: true
 
-  /fs-extra/9.1.0:
-    resolution: {integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==}
-    engines: {node: '>=10'}
+  /fs-extra/11.0.0:
+    resolution: {integrity: sha512-4YxRvMi4P5C3WQTvdRfrv5UVqbISpqjORFQAW5QPiKAauaxNCwrEdIi6pG3tDFhKKpMen+enEhHIzB/tvIO+/w==}
+    engines: {node: '>=14.14'}
     dependencies:
-      at-least-node: 1.0.0
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
