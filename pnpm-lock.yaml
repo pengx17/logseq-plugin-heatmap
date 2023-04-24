@@ -23,7 +23,7 @@ specifiers:
   react-dom: ^18.1.0
   react-error-boundary: ^3.1.4
   react-suspense-fetch: ^0.6.0
-  react-tooltip: ^4.2.21
+  react-tooltip: ^5.0.0
   react-use: ^17.4.0
   semantic-release: 19.0.5
   typescript: 4.9.4
@@ -40,7 +40,7 @@ dependencies:
   react-calendar-heatmap: 1.8.1_react@18.1.0
   react-dom: 18.1.0_react@18.1.0
   react-suspense-fetch: 0.6.0
-  react-tooltip: 4.2.21_ef5jwxihqo6n7gxfmzogljlgcm
+  react-tooltip: 5.2.0_ef5jwxihqo6n7gxfmzogljlgcm
   react-use: 17.4.0_ef5jwxihqo6n7gxfmzogljlgcm
 
 devDependencies:
@@ -372,6 +372,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@floating-ui/core/1.0.4:
+    resolution: {integrity: sha512-FPFLbg2b06MIw1dqk2SOEMAMX3xlrreGjcui5OTxfBDtaKTmh0kioOVjT8gcfl58juawL/yF+S+gnq8aUYQx/Q==}
+    dev: false
+
+  /@floating-ui/dom/1.0.12:
+    resolution: {integrity: sha512-HeG/wHoa2laUHlDX3xkzqlUqliAfa+zqV04LaKIwNCmCNaW2p0fQi4/Kd0LB4GdFoJ2UllLFq5gWnXAd67lg7w==}
+    dependencies:
+      '@floating-ui/core': 1.0.4
+    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
@@ -1205,6 +1215,10 @@ packages:
     resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -3444,17 +3458,16 @@ packages:
     resolution: {integrity: sha512-1genoJSIt9sIxa8kTPxgVORxXJUHdCBss9afP8QSfR4syFoofpT5XBpkcHOANTTBLLpZWOf00DNQSASH9GQerA==}
     dev: false
 
-  /react-tooltip/4.2.21_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-zSLprMymBDowknr0KVDiJ05IjZn9mQhhg4PRsqln0OZtURAJ1snt1xi5daZfagsh6vfsziZrc9pErPTDY1ACig==}
-    engines: {npm: '>=6.13'}
+  /react-tooltip/5.2.0_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-EH6XIg2MDbMTEElSAZQVXMVeFoOhTgQuea2or0iwyzsr9v8rJf3ImMhOtq7Xe/BPlougxC+PmOibazodLdaRoA==}
     peerDependencies:
-      react: '>=16.0.0'
-      react-dom: '>=16.0.0'
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
     dependencies:
-      prop-types: 15.8.1
+      '@floating-ui/dom': 1.0.12
+      classnames: 2.3.2
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      uuid: 7.0.3
     dev: false
 
   /react-universal-interface/0.6.2_react@18.1.0+tslib@2.4.0:
@@ -4194,11 +4207,6 @@ packages:
     resolution: {integrity: sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==}
     dependencies:
       inherits: 2.0.3
-    dev: false
-
-  /uuid/7.0.3:
-    resolution: {integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==}
-    hasBin: true
     dev: false
 
   /validate-npm-package-license/3.0.4:

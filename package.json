@@ -15,7 +15,7 @@
     "react-calendar-heatmap": "^1.8.1",
     "react-dom": "^18.1.0",
     "react-suspense-fetch": "^0.6.0",
-    "react-tooltip": "^4.2.21",
+    "react-tooltip": "^5.0.0",
     "react-use": "^17.4.0"
   },
   "devDependencies": {
